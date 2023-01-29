@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+    <link rel="dns-prefetch" href="https://connect.facebook.net/">
+    <link rel="dns-prefetch" href="https://www.googletagservices.com/">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+    <link rel="dns-prefetch" href="https://facebook.com/">
+    <link rel="dns-prefetch" href="https://static.mservice.io/">
+    <link rel="dns-prefetch" href="https://www.google.com/">
+    <link rel="dns-prefetch" href="https://www.google.com.vn/">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com/">
+    <link rel="preconnect" href="https://connect.facebook.net/">
+    <link rel="preconnect" href="https://www.googletagmanager.com/">
+    <link rel="preconnect" href="https://www.google-analytics.com/">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net/">
+    <link rel="preconnect" href="https://static.mservice.io/">
+    <link rel="preconnect" href="https://www.google.com/">
+    <link rel="preconnect" href="https://www.google.com.vn/">
+    <link rel="preconnect" href="https://www.googleadservices.com/">
+    <script type="application/ld+json">{
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "@id":"https://momo.vn/#website",
+        "name": "Ví MoMo",
+        "url": "https://momo.vn",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://momo.vn/tim-kiem?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }}</script>
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ví Điện Tử MoMo",
+        "alternateName": "Ví Điện Tử MoMo - Siêu Ứng Dụng Thanh Toán số 1 Việt Nam",
+        "legalName" : "ONLINE MOBILE SERVICES JSC (M_Service)",
+        "url": "https://momo.vn",
+        "logo": "https://static.mservice.io/img/logo-momo.png",
+        "foundingDate": "2007",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Phạm Thành Đức"
+            }],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12 Tân Trào, Phường Tân Phú, Quận 7",
+            "addressLocality": "Hồ Chí Minh",
+            "addressRegion": "VN",
+            "postalCode": "700000",
+            "addressCountry": "VN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "+841900545441",
+            "email": "hotro@momo.vn"
+        },
+        "sameAs": [
+            "https://www.facebook.com/vimomo/",
+            "https://www.youtube.com/channel/UCKHHW-qL2JoZqcSNm1jPlqw",
+            "https://www.linkedin.com/company/momo-mservice/",
+            "https://github.com/momo-wallet"
+        ]
+    }</script>
+    <meta name="next-head-count" content="43">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="1">
+    <style type="text/css">
+        .fresnel-container {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media not all and (min-width:0px) and (max-width:639.98px) {
+            .fresnel-at-xs {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) and (max-width:767.98px) {
+            .fresnel-at-sm {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:768px) and (max-width:1023.98px) {
+            .fresnel-at-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1024px) and (max-width:1279.98px) {
+            .fresnel-at-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1280px) {
+            .fresnel-at-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (max-width:639.98px) {
+            .fresnel-lessThan-sm {
+                display: none !important;
+            }
+        }
+
+        @media not all and (max-width:767.98px) {
+            .fresnel-lessThan-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (max-width:1023.98px) {
+            .fresnel-lessThan-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (max-width:1279.98px) {
+            .fresnel-lessThan-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) {
+            .fresnel-greaterThan-xs {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:768px) {
+            .fresnel-greaterThan-sm {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1024px) {
+            .fresnel-greaterThan-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1280px) {
+            .fresnel-greaterThan-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:0px) {
+            .fresnel-greaterThanOrEqual-xs {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) {
+            .fresnel-greaterThanOrEqual-sm {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:768px) {
+            .fresnel-greaterThanOrEqual-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1024px) {
+            .fresnel-greaterThanOrEqual-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1280px) {
+            .fresnel-greaterThanOrEqual-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:0px) and (max-width:639.98px) {
+            .fresnel-between-xs-sm {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:0px) and (max-width:767.98px) {
+            .fresnel-between-xs-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:0px) and (max-width:1023.98px) {
+            .fresnel-between-xs-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:0px) and (max-width:1279.98px) {
+            .fresnel-between-xs-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) and (max-width:767.98px) {
+            .fresnel-between-sm-md {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) and (max-width:1023.98px) {
+            .fresnel-between-sm-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:640px) and (max-width:1279.98px) {
+            .fresnel-between-sm-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:768px) and (max-width:1023.98px) {
+            .fresnel-between-md-lg {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:768px) and (max-width:1279.98px) {
+            .fresnel-between-md-xl {
+                display: none !important;
+            }
+        }
+
+        @media not all and (min-width:1024px) and (max-width:1279.98px) {
+            .fresnel-between-lg-xl {
+                display: none !important;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="preload" href="/assets/momo_files/4a8ca48d3d0d1139.css" as="style">
+    <link rel="stylesheet" href="/assets/momo_files/4a8ca48d3d0d1139.css" data-n-g=""><noscript data-n-css=""></noscript>
+    <script defer="defer" nomodule="" src="/assets/momo_files/polyfills-c67a75d1b6f99dc8.js"></script>
+    <script defer="defer" src="/assets/momo_files/5746.05b1a7632348e674.js"></script>
+    <script defer="defer" src="/assets/momo_files/5065.8a6b3ddccb4e4d6b.js"></script>
+    <script defer="defer" src="/assets/momo_files/4676.b7e0bccf125b1fd7.js"></script>
+    <script defer="defer" src="/assets/momo_files/6634.b5d923da6f87b2e6.js"></script>
+    <script defer="defer" src="/assets/momo_files/8470.0b3ba0b43d8218a9.js"></script>
+    <script defer="defer" src="/assets/momo_files/4392.8597a10c547decfc.js"></script>
+    <script defer="defer" src="/assets/momo_files/6127.6a42aa0c425b06a3.js"></script>
+    <script defer="defer" src="/assets/momo_files/2523-80e0d6563020ee34.js"></script>
+    <script defer="defer" src="/assets/momo_files/5840.88889588ed58a1b3.js"></script>
+    <script defer="defer" src="/assets/momo_files/323-b10b5dd527c274a6.js"></script>
+    <script defer="defer" src="/assets/momo_files/9989.66ce104e2edc2729.js"></script>
+    <script defer="defer" src="/assets/momo_files/9803.a40bff01fda2d80e.js"></script>
+    <script defer="defer" src="/assets/momo_files/4924.d49eca079d20cd06.js"></script>
+    <script defer="defer" src="/assets/momo_files/1215.368512e368626ae2.js"></script>
+    <script defer="defer" src="/assets/momo_files/9672-2f7734761c2ec0de.js"></script>
+    <script defer="defer" src="/assets/momo_files/1949-c28ae49b7e9bfe28.js"></script>
+    <script defer="defer" src="/assets/momo_files/7062.00efc96c7780170c.js"></script>
+    <script defer="defer" src="/assets/momo_files/9111-cccb3fcf7ca64f5a.js"></script>
+    <script defer="defer" src="/assets/momo_files/3755-19e112b2e66a107c.js"></script>
+    <script defer="defer" src="/assets/momo_files/4760-8a0eae524d809137.js"></script>
+    <script defer="defer" src="/assets/momo_files/9075-3cb8a8ccc4650322.js"></script>
+    <script defer="defer" src="/assets/momo_files/167.f2864b65d45ad306.js"></script>
+    <script defer="defer" src="/assets/momo_files/1769.5f54d19b3ffe3bf4.js"></script>
+    <script defer="defer" src="/assets/momo_files/2854-7efd388710a6e89b.js"></script>
+    <script defer="defer" src="/assets/momo_files/5337.22c168852cf68933.js"></script>
+    <script defer="defer" src="/assets/momo_files/5513.45c373e90c6e758c.js"></script>
+    <script src="/assets/momo_files/webpack-135ac2ea55612fca.js" defer="defer"></script>
+    <script src="/assets/momo_files/_app-29ee20fe4761dba9.js" defer="defer"></script>
+    <script src="/assets/momo_files/4405-72838c3b7c2c1ae2.js" defer="defer"></script>
+    <script src="/assets/momo_files/6261-1ec08b75238365be.js" defer="defer"></script>
+    <script src="/assets/momo_files/9361-d819695efbb0335e.js" defer="defer"></script>
+    <script src="/assets/momo_files/2298-3b180d1c4f44081f.js" defer="defer"></script>
+    <script src="/assets/momo_files/719-0429bfa4550a0fd1.js" defer="defer"></script>
+    <script src="/assets/momo_files/7273-0dfd356143eafd8e.js" defer="defer"></script>
+    <script src="/assets/momo_files/765-b2897ee61a487deb.js" defer="defer"></script>
+    <script src="/assets/momo_files/9975-997feb6df0016eeb.js" defer="defer"></script>
+    <script src="/assets/momo_files/7099-4b707c8afa16952d.js" defer="defer"></script>
+    <script src="/assets/momo_files/9113-662539fc33f4617a.js" defer="defer"></script>
+    <script src="/assets/momo_files/9204-dd6eb9836c096c96.js" defer="defer"></script>
+    <script src="/assets/momo_files/194-45d3b3fa8386713c.js" defer="defer"></script>
+    <script src="/assets/momo_files/vi-nhan-ai-0c4c92eca19ebcbb.js" defer="defer"></script>
+    <script src="/assets/momo_files/_buildManifest.js" defer="defer"></script>
+    <script src="/assets/momo_files/_ssgManifest.js" defer="defer"></script>
+    <style id="__jsx-265efa4f963d66f6">
+        .overlay.jsx-265efa4f963d66f6 {
+            background-color: rgba(255, 255, 255, .65);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px)
+        }
+
+        .overlay.jsx-265efa4f963d66f6 {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            height: 100vh;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0;
+            overflow-y: scroll;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            -webkit-transition-duration: 350ms;
+            -moz-transition-duration: 350ms;
+            -o-transition-duration: 350ms;
+            transition-duration: 350ms;
+            -webkit-transition-property: opacity, visibility;
+            -moz-transition-timing-function: opacity, visibility;
+            -o-transition-timing-function: opacity, visibility;
+            transition-property: opacity, visibility;
+            background-color: rgba(255, 255, 255, .85)
+        }
+
+        .overlay.is-active.jsx-265efa4f963d66f6 {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            -webkit-transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+            -moz-transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+            -o-transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+            transition-timing-function: cubic-bezier(.165, .84, .44, 1)
+        }
+    </style>
+    <style id="__jsx-ddfb0b416b0db288">
+        .submenu {
+            visibility: hidden;
+            opacity: 0;
+            padding-top: 15px
+        }
+
+        .submenu:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid#e0e0e0;
+            position: absolute;
+            top: 2px;
+            left: 34px;
+            margin-left: -5px;
+            pointer-events: none;
+            -webkit-transition: opacity.2s ease-in;
+            -moz-transition: opacity.2s ease-in;
+            -o-transition: opacity.2s ease-in;
+            transition: opacity.2s ease-in
+        }
+
+        .submenu:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            border-bottom: 14px solid#fff;
+            position: absolute;
+            top: 3px;
+            left: 35px;
+            margin-left: -5px;
+            pointer-events: none;
+            -webkit-transition: opacity.2s ease-in;
+            -moz-transition: opacity.2s ease-in;
+            -o-transition: opacity.2s ease-in;
+            transition: opacity.2s ease-in
+        }
+
+        .menu.is-active .submenu {
+            opacity: 1 !important;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            visibility: visible
+        }
+
+        .menu.is-active .icon {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg)
+        }
+    </style>
+    <style id="__jsx-3530741130">
+        .breadcrumb-item.jsx-3530741130+.breadcrumb-item.jsx-3530741130:before {
+            content: "";
+            opacity: .3;
+            width: 1.5rem;
+            height: 1rem;
+            background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            left: -6px;
+            top: 2px;
+            position: absolute;
+            -webkit-filter: none;
+            filter: none
+        }
+    </style>
+    <style id="__jsx-974c4914c5fc1860">
+        .swiper-hero.jsx-974c4914c5fc1860 .swiper-pagination {
+            bottom: 40px;
+            z-index: 20
+        }
+
+        .swiper-hero.jsx-974c4914c5fc1860 {
+            -webkit-clip-path: url(#my-clip-path);
+            clip-path: url(#my-clip-path)
+        }
+
+        @media(max-width:769px) {
+            .swiper-hero.jsx-974c4914c5fc1860 {
+                -webkit-clip-path: url(#my-clip-path2);
+                clip-path: url(#my-clip-path2)
+            }
+
+            .swiper-hero.jsx-974c4914c5fc1860 .swiper-pagination {
+                bottom: 20px
+            }
+        }
+
+        .swiper-hero.jsx-974c4914c5fc1860 .swiper-button-prev {}
+    </style>
+    <style id="__jsx-e18afbcea943561a">
+        .sl-item.jsx-e18afbcea943561a {
+            position: relative
+        }
+
+        .sl-item.jsx-e18afbcea943561a:before {
+            content: "";
+            height: 18px;
+            width: 2px;
+            background-color: #f45197;
+            position: absolute;
+            left: 0;
+            top: 4px
+        }
+    </style>
+    <style id="__jsx-1428799533">
+        .grad.jsx-1428799533 {
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)))
+        }
+
+        .grad-left.jsx-1428799533 {
+            background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: -moz-linear-gradient(right, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: -o-linear-gradient(right, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)));
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(var(--grad-rgb-color)), rgb(var(--grad-rgb-color)))
+        }
+    </style>
+    <style id="__jsx-2495f49cc0e24354">
+        .badge-date-left.jsx-2495f49cc0e24354 {
+            background: rgba(252, 100, 45, .15)
+        }
+    </style>
+    <style id="__jsx-1f8450e380c7ac75">
+        .donation-item.jsx-1f8450e380c7ac75:hover .dn-title.jsx-1f8450e380c7ac75 {
+            color:
+        }
+
+        .text-finish.jsx-1f8450e380c7ac75 {
+            color: #7eb54a
+        }
+
+        .dn-progress.jsx-1f8450e380c7ac75 .bg-finish {
+            background-color: #7eb54a
+        }
+    </style>
+    <style id="__jsx-fce1b66ea0a27aeb">
+        .swp-brand.jsx-fce1b66ea0a27aeb .swiper-button-prev,
+        .swp-brand.jsx-fce1b66ea0a27aeb .swiper-button-next {
+            top: 40%
+        }
+    </style>
+    <style id="__jsx-df4f07e142feb149">
+        .LinesEllipsis-ellipsis {
+            pointer-events: auto
+        }
+
+        .is-truncated {
+            height: 160px;
+            max-height: 160px;
+            overflow: hidden
+        }
+
+        .is-truncated:after {
+            background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)100%);
+            background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)100%);
+            background: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)100%);
+            background: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)100%);
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 60px;
+            width: 100%
+        }
+    </style>
+    <style id="__jsx-a076a52524a182f8">
+        .article-question [data-reach-accordion-item][data-state="open"] .icon {
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            transform: rotate(-180deg)
+        }
+    </style>
+    <style id="__jsx-e310cb30ec364d2c">
+        .totop-btn.jsx-e310cb30ec364d2c {
+            margin-bottom: env(safe-area-inset-bottom) !important
+        }
+    </style>
+    <style id="__jsx-b02d852f163399">
+        #nprogress {
+            pointer-events: none
+        }
+
+        #nprogress .bar {
+            background: #0070f3;
+            position: fixed;
+            z-index: 1031;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px
+        }
+
+        #nprogress .peg {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            -webkit-box-shadow: 0 0 10px#0070f3, 0 0 5px#0070f3;
+            -moz-box-shadow: 0 0 10px#0070f3, 0 0 5px#0070f3;
+            box-shadow: 0 0 10px#0070f3, 0 0 5px#0070f3;
+            opacity: 1;
+            -webkit-transform: rotate(3deg)translate(0px, -4px);
+            -ms-transform: rotate(3deg)translate(0px, -4px);
+            -moz-transform: rotate(3deg)translate(0px, -4px);
+            -o-transform: rotate(3deg)translate(0px, -4px);
+            transform: rotate(3deg)translate(0px, -4px)
+        }
+    </style>
+    <style id="__jsx-96b46fb5bafa9dee">
+        :root {
+            --pinkmomo: #a50064;
+            --pink: #d82f8b;
+            --pinklight: #f9b5c3;
+            --gray-900: #171717;
+            --gray-800: #424242;
+            --gray-700: #616161;
+            --gray-600: #757575;
+            --gray-500: #9e9e9e;
+            --gray-400: #bdbdbd;
+            --gray-300: #e0e0e0;
+            --gray-200: #eeeeee;
+            --gray-100: #f5f5f5
+        }
+    </style>
+    <style data-href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXA3iQ.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTA.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTA.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTA.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXAHgKbcf2z4e9z5MV0.woff) format('woff');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXAHiabcf2z4e9z5MV0.woff) format('woff');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXAHgqbcf2z4e9z5MV0.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXAHg6bcf2z4e9z5MV0.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXAHjabcf2z4e9z5.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+    </style>
+    <style type="text/css" data-styled-jsx="">
+        .footer-cta {
+            display: flex
+        }
+    </style>
+    <link as="script" rel="prefetch" href="/assets/momo_files/302-3a0f48941c9cc8f6.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/6888-9a2803482360a5dc.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/heo-dat-momo-d44068935189fc20.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/trai-tim-momo-9309a252e6e99f94.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/9716-8c99348e9ba7fda1.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/5727-14653555cbce0ba1.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/8777-8d97d9b247b466bb.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/doi-tac-dong-hanh-58d5944103e14488.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/4673-263438ca968c1439.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/9415-e81e3466fc862b69.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/5505-1ad66255fbd889b2.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/2817-5b2c732b9829c555.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/880-3959114a3d03f91f.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/3115-53d3e2fe72fe2ddc.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/blog-cuoc-song-4b84e00e5bb1c194.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/9690-32cc49a7861415e0.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/2533-b029250376b9a277.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/tu-thien-0ac94d8a128e99d0.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/3908-e149157052c5d786.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/2271-287b50ea3957fd07.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/3649-170775215c8f0e2d.js">
+    <link as="script" rel="prefetch" href="/assets/momo_files/tin-tuc-cong-dong-4591b9258d7406ef.js">
+<!--    angularJS-->
+    <script src="/assets/js/angular.min.js"></script>
+<!--    font-awesome (6.2.1)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="/assets/js/volunteering-program-app.js"></script>
+</head>
+<body ng-app="volunteering-program-app" ng-controller="volunteering-program-controller">
+
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDX6WV7&gtm_auth=&gtm_preview=&gtm_cookies_win=x"
+            height="0" width="0" style="display:none;visibility:hidden" id="tag-manager"></iframe></noscript><noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9JDDJZ&gtm_auth=&gtm_preview=&gtm_cookies_win=x"
+            height="0" width="0" style="display:none;visibility:hidden" id="tag-manager2"></iframe></noscript>
+    <!--    menu-->
+    <div th:replace="~{/layout/_menu::navbar1}"></div>
+    <div th:replace="~{/layout/_menu::navbar2}"></div>
+
+    <!--    main-->
+    <div th:replace="${main}"></div>
+
+    <!--    footer-->
+    <div th:replace="~{/layout/_footer::footer}"></div>
+
+<div id="scrollToTop"
+     class="jsx-e310cb30ec364d2c totop-btn fixed  right-3 bottom-16 z-30 duration-300 sm:bottom-10 sm:right-8  pointer-events-none translate-y-full  select-none opacity-0">
+    <div
+            class="jsx-e310cb30ec364d2c  flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border bg-white text-gray-500 shadow-sm transition hover:bg-gray-50 hover:text-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+             class="jsx-e310cb30ec364d2c h-5 w-5 ">
+            <path fill-rule="evenodd"
+                  d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd" class="jsx-e310cb30ec364d2c"></path>
+        </svg></div>
+</div>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script id="__NEXT_DATA__"
+        type="application/json">{"props":{"pageMaster":{"Result":true,"Data":{"MenuHeaders":[{"Id":143,"ParentId":null,"Name":"Dịch vụ","Url":"","IsFeatured":false,"OrderView":100,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"","Style":2,"Description":""},{"Id":147,"ParentId":143,"Name":"Chuyển - nhận tiền","Url":"/chuyen-tien","IsFeatured":false,"OrderView":100,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon1.svg","Target":null,"Style":1,"Description":"Miễn phí, bảo mật, chuyển trong 1s"},{"Id":159,"ParentId":144,"Name":"Giới thiệu","Url":"/sieu-ung-dung-momo","IsFeatured":false,"OrderView":100,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200612164947-637275773877815379.png","Target":null,"Style":1,"Description":"MoMo - Siêu ứng dụng số 1 Việt Nam"},{"Id":146,"ParentId":145,"Name":"Đối tác thanh toán","Url":"/doi-tac","IsFeatured":false,"OrderView":100,"IconClass":null,"Avatar":"https://static.mservice.io/images/s/momo-upload-api-200529144116-637263600768288960.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":"Hơn 20,000 Đối tác có thanh toán với Ví MoMo"},{"Id":164,"ParentId":152,"Name":"Sự kiện","Url":"/tin-tuc/tin-tuc-su-kien","IsFeatured":false,"OrderView":100,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210824161508.svg","Target":null,"Style":1,"Description":"Chuyên trang cập nhật thông tin mới nhất"},{"Id":144,"ParentId":null,"Name":"Về MoMo","Url":"","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":""},{"Id":148,"ParentId":143,"Name":"Thanh toán hóa đơn","Url":"/thanh-toan-hoa-don","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon3.svg","Target":null,"Style":1,"Description":"Điện - Nước - Internet - Chung cư"},{"Id":211,"ParentId":144,"Name":"An toàn - Bảo mật","Url":"/an-toan-bao-mat","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-221010155510.svg","Target":null,"Style":1,"Description":"Bảo mật thông tin - An toàn trải nghiệm"},{"Id":162,"ParentId":145,"Name":"Điểm thanh toán","Url":"/timdiemthanhtoan","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/images/s/momo-upload-api-200529144116-637263600768288960.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":"Tìm điểm có thanh toán bằng Ví MoMo ngay gần bạn"},{"Id":165,"ParentId":152,"Name":"Khuyến mãi","Url":"/tin-tuc/khuyen-mai","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210824161524.svg","Target":null,"Style":1,"Description":"MoMo luôn có chương trình HOT mỗi ngày"},{"Id":168,"ParentId":153,"Name":"Hỏi đáp","Url":"/hoi-dap","IsFeatured":false,"OrderView":99,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200612165653-637275778130964195.png","Target":null,"Style":1,"Description":"Giải đáp cụ thể những thắc mắc của người dùng"},{"Id":149,"ParentId":143,"Name":"Thanh toán tại quầy","Url":"/doi-tac/cua-hang-tien-loi","IsFeatured":false,"OrderView":98,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon4.svg","Target":null,"Style":1,"Description":"Siêu thị - Mua sắm - Xăng dầu"},{"Id":163,"ParentId":145,"Name":"Liên kết ngân hàng","Url":"/huong-dan/lien-ket-ngan-hang-ctgr67","IsFeatured":false,"OrderView":98,"IconClass":null,"Avatar":"https://static.mservice.io/images/s/momo-upload-api-200529144116-637263600768288960.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":"Hướng dẫn liên kết ngân hàng với Ví MoMo"},{"Id":203,"ParentId":152,"Name":"Thông cáo","Url":"/tin-tuc/thong-cao-bao-chi","IsFeatured":false,"OrderView":98,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210824161542.svg","Target":null,"Style":1,"Description":"Thông tin truyền thông báo chí của MoMo"},{"Id":152,"ParentId":null,"Name":"Tin tức","Url":"/tin-tuc","IsFeatured":false,"OrderView":97,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":null},{"Id":150,"ParentId":143,"Name":"Nạp tiền điện thoại","Url":"/doi-tac/dich-vu-vien-thong","IsFeatured":false,"OrderView":97,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon2.svg","Target":null,"Style":1,"Description":"Top up - Mã thẻ cào - Data 3G/4G"},{"Id":180,"ParentId":144,"Name":"Hỗ trợ","Url":"/huong-dan/huong-dan-gui-yeu-cau-ho-tro-bang-tinh-nang-tro-giup","IsFeatured":false,"OrderView":97,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200810094654-637326496143399142.png","Target":null,"Style":1,"Description":"Luôn hỗ trợ bạn giải quyết mọi vấn đề"},{"Id":169,"ParentId":153,"Name":"Hướng dẫn","Url":"/huong-dan","IsFeatured":false,"OrderView":97,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200612165713-637275778334027459.png","Target":null,"Style":1,"Description":"Các bước sử dụng Ví MoMo được minh họa chi tiết, rõ ràng"},{"Id":153,"ParentId":null,"Name":"Trợ giúp","Url":"","IsFeatured":false,"OrderView":96,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":null},{"Id":151,"ParentId":143,"Name":"Game / Ứng dụng","Url":"/nap-the-game","IsFeatured":false,"OrderView":96,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon6.svg","Target":null,"Style":1,"Description":"Thẻ Game - Google Play - App Store"},{"Id":161,"ParentId":144,"Name":"Liên hệ","Url":"/lienhe","IsFeatured":false,"OrderView":96,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200612165011-637275774115426546.png","Target":null,"Style":1,"Description":"Hãy liên hệ với chúng tôi khi bạn cần"},{"Id":204,"ParentId":152,"Name":"Thư viện","Url":"/tin-tuc/hinh-anh-video","IsFeatured":false,"OrderView":96,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210824161549.svg","Target":null,"Style":1,"Description":"Thư viện về hình ảnh, Video của MoMo"},{"Id":176,"ParentId":null,"Name":"Đối tác","Url":"","IsFeatured":false,"OrderView":95,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":null},{"Id":154,"ParentId":143,"Name":"Tài chính / Bảo hiểm","Url":"/tai-chinh-4-khong","IsFeatured":false,"OrderView":95,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon7.svg","Target":null,"Style":1,"Description":"Túi Thần Tài - Ví Trả Sau - Bảo hiểm"},{"Id":205,"ParentId":152,"Name":"Cộng đồng","Url":"/tin-tuc/cong-dong","IsFeatured":false,"OrderView":95,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210929100003.svg","Target":null,"Style":1,"Description":"Cập nhật thông tin hoạt động quyên góp"},{"Id":155,"ParentId":143,"Name":"Du lịch - Đi lại","Url":"/du-lich-di-lai","IsFeatured":false,"OrderView":94,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon8.svg","Target":null,"Style":1,"Description":"Vé máy bay - Tàu/Xe - Đặt khách sạn"},{"Id":208,"ParentId":152,"Name":"Thông báo","Url":"/tin-tuc/thong-bao","IsFeatured":false,"OrderView":94,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-220504162327.svg","Target":null,"Style":1,"Description":"Cập nhật thông báo về sản phẩm, dịch vụ của MoMo"},{"Id":193,"ParentId":null,"Name":"Blog MoMo","Url":"/blog","IsFeatured":false,"OrderView":93,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":null,"Style":1,"Description":"Cung cấp thông tin hữu ích đa dạng mọi lĩnh vực mà bạn cần tìm"},{"Id":156,"ParentId":143,"Name":"Vé xem phim","Url":"/cinema","IsFeatured":false,"OrderView":93,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon9.svg","Target":null,"Style":1,"Description":"Lịch chiếu - Rạp phim - Phim online"},{"Id":157,"ParentId":143,"Name":"Mua sắm trực tuyến","Url":"/doi-tac/mua-sam-online","IsFeatured":false,"OrderView":92,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/styles/desktop/images/tienich/icon5.svg","Target":null,"Style":1,"Description":"Thương mại điện tử - Đi chợ online"},{"Id":186,"ParentId":143,"Name":"Ví nhân ái","Url":"/vi-nhan-ai","IsFeatured":false,"OrderView":91,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210209101107.svg","Target":"_blank","Style":1,"Description":"Trái Tim MoMo - Heo Đất MoMo"},{"Id":207,"ParentId":143,"Name":"Thổ Địa MoMo","Url":"/tho-dia-momo","IsFeatured":false,"OrderView":90,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-211207101455-637744688952506026.png","Target":null,"Style":1,"Description":"Tìm Quán Ngon - Ưu đãi xịn"},{"Id":209,"ParentId":143,"Name":"Vé máy bay","Url":"/ve-may-bay","IsFeatured":false,"OrderView":89,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-221024163823.svg","Target":null,"Style":1,"Description":"Bay trước - Trả tiền sau"},{"Id":210,"ParentId":143,"Name":"Ví MoMo gia đình","Url":"/vi-momo-gia-dinh","IsFeatured":false,"OrderView":88,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-220614093517.svg","Target":null,"Style":1,"Description":"Sẻ chia tài chính - Gắn kết gia đình"},{"Id":212,"ParentId":143,"Name":"Khách sạn theo giờ","Url":"/khach-san-theo-gio","IsFeatured":false,"OrderView":87,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-221024163723.svg","Target":null,"Style":1,"Description":"Đặt nhà nghỉ - khách sạn theo giờ"},{"Id":194,"ParentId":193,"Name":"Phim ảnh","Url":"/blog/di-quay","IsFeatured":false,"OrderView":8,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623101225.svg","Target":null,"Style":1,"Description":"Tổng hợp, đánh giá phim hay mỗi tuần"},{"Id":196,"ParentId":193,"Name":"Du lịch","Url":"/blog/du-hi","IsFeatured":false,"OrderView":7,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623102133.svg","Target":null,"Style":1,"Description":"Điểm danh cảnh đẹp, mẹo vặt du hí\n"},{"Id":200,"ParentId":193,"Name":"Tài Chính - Bảo Hiểm","Url":"/blog/tai-chinh-bao-hiem","IsFeatured":false,"OrderView":6,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-210628154635.svg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210628154635.svg","Target":null,"Style":1,"Description":"Khám phá, chia sẻ về Tài chính - Bảo hiểm"},{"Id":177,"ParentId":176,"Name":"Đối tác thanh toán","Url":"/doi-tac","IsFeatured":false,"OrderView":5,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200618151418-637280900581361162.png","Target":null,"Style":1,"Description":"Các đối tác lớn hợp tác cùng MoMo"},{"Id":199,"ParentId":193,"Name":"Game - App","Url":"/blog/game","IsFeatured":false,"OrderView":5,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623102414.svg","Target":null,"Style":1,"Description":"Tổng hợp game hay, bí quyết săn vật phẩm"},{"Id":178,"ParentId":176,"Name":"Tìm điểm thanh toán","Url":"/timdiemthanhtoan","IsFeatured":false,"OrderView":4,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/img/momo-upload-api-200618100807-637280716870668502.png","Target":null,"Style":1,"Description":"Cửa hàng chấp nhận thanh toán MoMo\n\n"},{"Id":201,"ParentId":193,"Name":"Đời sống","Url":"/blog/doi-song","IsFeatured":false,"OrderView":4,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-210701145530.svg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210701145530.svg","Target":null,"Style":1,"Description":"Chia sẻ những câu chuyện hay, truyền cảm hứng cuộc sống"},{"Id":195,"ParentId":193,"Name":"Ăn uống","Url":"/blog/them-an","IsFeatured":false,"OrderView":3,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623101924.svg","Target":null,"Style":1,"Description":"Review món ngon nhiều người săn đón\n"},{"Id":189,"ParentId":176,"Name":"Tìm điểm Nạp/Rút","Url":"/timdiemgiaodich","IsFeatured":false,"OrderView":2,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210326114630.svg","Target":null,"Style":1,"Description":"Các điểm giao dịch Nạp/Rút MoMo"},{"Id":198,"ParentId":193,"Name":"Chọn MoMo","Url":"/blog/chon-momo","IsFeatured":false,"OrderView":2,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623102322.svg","Target":null,"Style":1,"Description":"Khám phá tiện ích ứng dụng Ví MoMo"},{"Id":190,"ParentId":176,"Name":"Hợp tác doanh nghiệp","Url":"https://business.momo.vn/","IsFeatured":false,"OrderView":1,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210401145341.svg","Target":null,"Style":1,"Description":" Đăng ký hợp tác mới với MoMo"},{"Id":197,"ParentId":193,"Name":"Mua sắm","Url":"/blog/mua-gi","IsFeatured":false,"OrderView":1,"IconClass":null,"Avatar":"https://static.mservice.io/default/s180x135/no-image-momo.jpg","Icon":"https://static.mservice.io/fileuploads/svg/momo-file-210623102236.svg","Target":null,"Style":1,"Description":"Chia sẻ cách chọn hàng chất lượng, tiết kiệm"}],"MenuFooters":[{"Id":187,"ParentId":143,"Name":"Ví Nhân Ái","Url":"/vi-nhan-ai#footer","IsFeatured":false,"OrderView":9,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-220616140849.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ của Momo"},{"Id":181,"ParentId":143,"Name":"Vé máy bay","Url":"/ve-may-bay#footer","IsFeatured":false,"OrderView":8,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-201210145350.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ nổi bật"},{"Id":191,"ParentId":143,"Name":"Nạp thẻ Game","Url":"/nap-the-game#footer","IsFeatured":false,"OrderView":5,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-210614084015.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ của Momo"},{"Id":184,"ParentId":143,"Name":"Chuyển tiền","Url":"/chuyen-tien#footer","IsFeatured":false,"OrderView":4,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-201217140851.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ của Momo"},{"Id":182,"ParentId":143,"Name":"Vé xe khách","Url":"/ve-xe#footer","IsFeatured":false,"OrderView":3,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-201214120331.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ nổi bật"},{"Id":183,"ParentId":143,"Name":"Vé tàu hỏa","Url":"/ve-tau-hoa#footer","IsFeatured":false,"OrderView":3,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-201214120427.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ nổi bật"},{"Id":185,"ParentId":143,"Name":"Vé xem phim","Url":"/cinema#footer","IsFeatured":false,"OrderView":1,"IconClass":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-211220115317.svg","Icon":"https://static.mservice.io/default/s/no-image-momo.jpg","Target":"_blank","Style":1,"Description":"Dịch vụ của Momo"}],"CateContents":[{"Id":32,"UrlRewrite":"gioi-thieu"},{"Id":36,"UrlRewrite":"dich-vu-tai-diem-giao-dich"},{"Id":38,"UrlRewrite":"khach-hang-doanh-nghiep"}]},"Error":null},"__N_SSG":true,"pageProps":{"dataServiceDetail":{"Result":true,"Data":{"Id":12,"Name":"Ví nhân ái","ParentId":null,"Logo":"https://static.mservice.io/img/momo-upload-api-220610101339-637904528190741793.png","Link":"/vi-nhan-ai","ViewInApp":true,"HeaderType":3,"FooterType":2,"ShowBannerHeader":true,"ShowBreadcrumb":false,"ShowFooter":true,"ShowHeaderLogo":true,"Meta":{"Title":"Ví Nhân Ái - Triệu người chung tay quyên góp vì một Việt Nam tốt đẹp hơn | MoMo","Description":"Chung tay giúp đỡ cộng đồng, làm ngàn điều hay, biến những điều nhỏ bé thành vĩ đại để cuộc sống ngày một vui vẻ và đầy ý nghĩa. Tìm hiểu ngay!","Keywords":"","Url":"/vi-nhan-ai","Avatar":"https://static.mservice.io/img/momo-upload-api-220610222452-637904966926604465.jpg","Scripts":null,"Robots":null,"RatingValue":4.5,"RatingBest":5,"RatingCount":24,"Date":null}},"Error":null},"dataServiceBlocks":{"Result":true,"Data":[{"Id":999,"PageId":12,"Type":32,"TypeName":"MenuHeader","Title":"Menu Header Vi Nhan Ai","Data":{"Items":[{"Id":"75b73424-3faf-4b5c-a13c-99125909f339","Name":"Trái Tim MoMo","NewTab":false,"Description":null,"DisplayOrder":0,"Icon":"https://static.mservice.io/fileuploads/svg/momo-file-201210105714.svg","ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/trai-tim-momo"},{"Id":"0fcb1967-e64e-4430-974f-e0f4d8b6bbda","Name":"Heo Đất MoMo","NewTab":false,"Description":null,"DisplayOrder":1,"Icon":"https://static.mservice.io/fileuploads/svg/momo-file-201210105632.svg","ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/heo-dat-momo"},{"Id":"83207c74-7de9-42a1-ae59-36e78806b015","Name":"Sống Tốt","NewTab":false,"Description":null,"DisplayOrder":1,"Icon":null,"ParentId":"c297e502-f919-40db-9c8b-8e4b1977ae61","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/blog-cuoc-song/song-tot"},{"Id":"477de64e-59ad-453b-b5f8-1648b10a730b","Name":"Sống Khỏe","NewTab":false,"Description":null,"DisplayOrder":2,"Icon":null,"ParentId":"c297e502-f919-40db-9c8b-8e4b1977ae61","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/blog-cuoc-song/song-khoe"},{"Id":"03eae635-a26a-4310-a03b-fe9c1d9bfee1","Name":"Sống Thông Minh","NewTab":false,"Description":null,"DisplayOrder":3,"Icon":null,"ParentId":"c297e502-f919-40db-9c8b-8e4b1977ae61","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/blog-cuoc-song/song-thong-minh"},{"Id":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Name":"Hoàn Cảnh Quyên Góp","NewTab":false,"Description":null,"DisplayOrder":3,"Icon":null,"ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien"},{"Id":"3efa5b61-780a-4e5e-a958-d4e29e55e06f","Name":"Sống Vui","NewTab":false,"Description":null,"DisplayOrder":4,"Icon":null,"ParentId":"c297e502-f919-40db-9c8b-8e4b1977ae61","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/blog-cuoc-song/song-vui"},{"Id":"a3ef567d-c510-43a4-aea1-5c1e040ddf09","Name":"Đối Tác Đồng Hành","NewTab":false,"Description":null,"DisplayOrder":4,"Icon":null,"ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/doi-tac-dong-hanh"},{"Id":"a1caa515-4bb1-416c-9cfc-3f7c59aa47f8","Name":"Tin Tức Cộng Đồng","NewTab":false,"Description":null,"DisplayOrder":5,"Icon":null,"ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tin-tuc-cong-dong"},{"Id":"306dfd0e-9870-4577-915c-2763e631900c","Name":"Vì Trẻ Em","NewTab":false,"Description":null,"DisplayOrder":5,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/giup-do-tre-em"},{"Id":"c297e502-f919-40db-9c8b-8e4b1977ae61","Name":"Blog Cuộc Sống","NewTab":false,"Description":null,"DisplayOrder":6,"Icon":null,"ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/blog-cuoc-song"},{"Id":"77a88638-5a21-4039-a17a-2f9abf018c77","Name":"Người Già, Người Khuyết Tật","NewTab":false,"Description":null,"DisplayOrder":6,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/giup-do-nguoi-gia-nguoi-khuyet-tat"},{"Id":"3776252d-91c2-41e5-9471-91ce3241cfb6","Name":"Bệnh Hiểm Nghèo","NewTab":false,"Description":null,"DisplayOrder":7,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/giup-do-nguoi-mac-benh-hiem-ngheo"},{"Id":"3107a1ca-6651-4ba7-8fa0-ab6e1e4f4fca","Name":"Hoàn Cảnh Khó Khăn","NewTab":false,"Description":null,"DisplayOrder":8,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/giup-do-gia-dinh-hoan-canh-kho-khan"},{"Id":"632cf395-3f9f-45b6-b4b1-2a8fbd3317fa","Name":"Hỗ Trợ Giáo Dục","NewTab":false,"Description":null,"DisplayOrder":10,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/phat-trien-giao-duc"},{"Id":"0c234dc7-5895-48d8-8cc7-4cb7bcfbf256","Name":"Đầu Tư Cơ Sở Vật Chất","NewTab":false,"Description":null,"DisplayOrder":11,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/dau-tu-co-so-vat-chat"},{"Id":"468e7603-4553-4e85-ad89-c7e3914bdb57","Name":"Cứu Trợ Động Vật","NewTab":false,"Description":null,"DisplayOrder":12,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/cuu-tro-dong-vat-cho-meo"},{"Id":"64ccdc98-f991-4725-84e1-f562621f3a32","Name":"Bảo Vệ Môi Trường","NewTab":false,"Description":null,"DisplayOrder":13,"Icon":null,"ParentId":"3bf6c5d8-1dcf-4c95-b489-576e70e6e132","Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai/tu-thien/bao-ve-moi-truong"}],"Root":{"Id":"d150f546-e7be-4dfa-a414-aa7491ed6829","Name":"Ví Nhân Ái","NewTab":false,"Description":null,"DisplayOrder":0,"Icon":"https://static.mservice.io/img/momo-upload-api-220610101417-637904528573119192.png","ParentId":null,"Status":1,"Target":null,"Type":1,"Url":"/vi-nhan-ai"}}},{"Id":1073,"PageId":12,"Type":33,"TypeName":"MenuFooter","Title":"Menu Footer Vi Nhan Ai","Data":{"Tree":[{"Id":"c67def62-242a-423a-b30f-f5537e3cd44a","Name":"Trái Tim MoMo","Description":null,"Url":"/trai-tim-momo","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":0,"Icon":null,"ParentId":null},{"Id":"56f5ba0b-2aed-44d0-ab80-bf8ad1ee4c47","Name":"Heo Đất MoMo","Description":null,"Url":"/heo-dat-momo","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":1,"Icon":null,"ParentId":null},{"Id":"84a2ac2b-79d9-4045-a6d5-f03a820305c2","Name":"Đối Tác Đồng Hành","Description":null,"Url":"/vi-nhan-ai/doi-tac-dong-hanh","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":2,"Icon":null,"ParentId":null},{"Id":"fbb97358-5cc4-4dcf-a167-21d86ea23f0c","Name":"Tin Tức Cộng Đồng","Description":null,"Url":"/vi-nhan-ai/tin-tuc-cong-dong","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":3,"Icon":null,"ParentId":null},{"Id":"564e8bc7-5a80-4d39-9d20-97fc0f02ffe9","Name":"Blog Cuộc Sống","Description":null,"Url":"/vi-nhan-ai/blog-cuoc-song","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":4,"Icon":null,"ParentId":null},{"Id":"16c36366-afea-4ffe-8150-fbec8d266f1c","Name":"Hoàn Cảnh Quyên Góp","Description":null,"Url":"/vi-nhan-ai/tu-thien","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":5,"Icon":null,"ParentId":null},{"Id":"aeb14027-8b73-4dd6-a31a-876d3f9a0330","Name":"\u0026nbsp;","Description":null,"Url":null,"Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":6,"Icon":null,"ParentId":null},{"Id":"492f074c-0a8c-4a84-91ab-38dbcf7cf688","Name":"\u0026nbsp;","Description":null,"Url":null,"Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":7,"Icon":null,"ParentId":null},{"Id":"460b1349-1d89-4cdf-a7c3-e1e05b1e7d7e","Name":"\u0026nbsp;","Description":null,"Url":null,"Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":8,"Icon":null,"ParentId":null},{"Id":"6b298638-530c-4b04-a1bc-497ecba0eeae","Name":"Vì Trẻ Em","Description":null,"Url":"/vi-nhan-ai/tu-thien/giup-do-tre-em","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":9,"Icon":null,"ParentId":"16c36366-afea-4ffe-8150-fbec8d266f1c"},{"Id":"db70d2b8-589d-4138-bf11-e31652323dfa","Name":"Người Già, Người Khuyết Tật","Description":null,"Url":"/vi-nhan-ai/tu-thien/giup-do-nguoi-gia-nguoi-khuyet-tat","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":10,"Icon":null,"ParentId":"16c36366-afea-4ffe-8150-fbec8d266f1c"},{"Id":"ac3b630e-e5ce-4be2-b73a-ad295d9dd945","Name":"Bệnh Hiểm Nghèo","Description":null,"Url":"/vi-nhan-ai/tu-thien/giup-do-nguoi-mac-benh-hiem-ngheo","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":11,"Icon":null,"ParentId":"16c36366-afea-4ffe-8150-fbec8d266f1c"},{"Id":"95ac2fd0-379c-41c9-96c4-951392e7b77f","Name":"Hoàn Cảnh Khó Khăn","Description":null,"Url":"/vi-nhan-ai/tu-thien/giup-do-gia-dinh-hoan-canh-kho-khan","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":12,"Icon":null,"ParentId":"aeb14027-8b73-4dd6-a31a-876d3f9a0330"},{"Id":"da7293bd-1c6f-4330-9172-655a02fd9ad9","Name":"Hỗ Trợ Giáo Dục","Description":null,"Url":"/vi-nhan-ai/tu-thien/phat-trien-giao-duc","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":13,"Icon":null,"ParentId":"aeb14027-8b73-4dd6-a31a-876d3f9a0330"},{"Id":"89f10ae5-c2c2-4d97-a216-096ab4ff4790","Name":"Đầu Tư Cơ Sở Vật Chất","Description":null,"Url":"/vi-nhan-ai/tu-thien/dau-tu-co-so-vat-chat","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":14,"Icon":null,"ParentId":"aeb14027-8b73-4dd6-a31a-876d3f9a0330"},{"Id":"dc21bcf2-ed09-4040-9cd0-00eea2793453","Name":"Cứu Trợ Động Vật","Description":null,"Url":"/vi-nhan-ai/tu-thien/cuu-tro-dong-vat-cho-meo","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":15,"Icon":null,"ParentId":"492f074c-0a8c-4a84-91ab-38dbcf7cf688"},{"Id":"8aa3ea1d-aebb-4cad-8296-eb8139e9b83f","Name":"Bảo Vệ Môi Trường","Description":null,"Url":"/vi-nhan-ai/tu-thien/bao-ve-moi-truong","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":16,"Icon":null,"ParentId":"492f074c-0a8c-4a84-91ab-38dbcf7cf688"},{"Id":"159f22df-f12a-4f10-a256-79ca52280ef1","Name":"Sống Tốt","Description":null,"Url":"/vi-nhan-ai/blog-cuoc-song/song-tot","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":17,"Icon":null,"ParentId":"564e8bc7-5a80-4d39-9d20-97fc0f02ffe9"},{"Id":"e665efba-e9cf-46e4-a266-692d6be42f67","Name":"Sống Khỏe","Description":null,"Url":"/vi-nhan-ai/blog-cuoc-song/song-khoe","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":18,"Icon":null,"ParentId":"564e8bc7-5a80-4d39-9d20-97fc0f02ffe9"},{"Id":"6a64a86f-05d8-43ee-bb8a-bc1899c44e13","Name":"Sống Thông Minh","Description":null,"Url":"/vi-nhan-ai/blog-cuoc-song/song-thong-minh","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":19,"Icon":null,"ParentId":"564e8bc7-5a80-4d39-9d20-97fc0f02ffe9"},{"Id":"93a2275b-4477-489f-b2af-becf4e638b60","Name":"Sống Vui","Description":null,"Url":"/vi-nhan-ai/blog-cuoc-song/song-vui","Target":null,"NewTab":false,"Status":1,"Type":1,"DisplayOrder":20,"Icon":null,"ParentId":"564e8bc7-5a80-4d39-9d20-97fc0f02ffe9"}],"Services":null,"GroupMenus":[{"Title":"CHĂM SÓC KHÁCH HÀNG","CTA":{"Title":"Hướng dẫn trợ giúp trên","Description":"Ứng dụng Ví MoMo","GuideGroupId":530,"Icon":"https://static.mservice.io/fileuploads/svg/momo-file-220524212018.svg","NewTab":false,"Status":1,"Url":"/huong-dan/huong-dan-gui-yeu-cau-ho-tro-bang-tinh-nang-tro-giup"},"Items":[{"Title":"Địa chỉ:","ValueHtml":"Tầng M, Tòa nhà Victory Tower, Số 12 Tân Trào, Phường Tân Phú, Quận 7, Thành phố Hồ Chí Minh","Icon":null,"Description":null},{"Title":"Hotline:","ValueHtml":"\u003ca class=\"inline font-bold text-white hover:text-pink-500\" href=\"tel:1900545441\"\u003e1900 5454 41\u003c/a\u003e \u003ci\u003e(1000 đ/phút)\u003c/i\u003e","Icon":null,"Description":null},{"Title":"Email:","ValueHtml":"\u003ca class=\"inline font-bold text-white hover:text-pink-500\" href=\"mailto:hotro@momo.vn\"\u003ehotro@momo.vn\u003c/a\u003e","Icon":null,"Description":null},{"Title":"Tổng đài gọi ra:","ValueHtml":"\u003ca class=\"inline font-bold text-white hover:text-pink-500\" href=\"tel:02873065555\"\u003e028.7306.5555\u003c/a\u003e\u003cspan class=\"text-gray-500\"\u003e - \u003c/span\u003e\u003ca class=\"inline font-bold text-white hover:text-pink-500\" href=\"tel:02899995555\"\u003e028.9999.5555\u003c/a\u003e","Icon":null,"Description":null}]}]}},{"Id":1091,"PageId":12,"Type":23,"TypeName":"BreadCrumb","Template":1,"DisplayOrder":null,"ShortTitle":null,"BgColor":null,"Data":{"Items":[{"Title":"Siêu ứng dụng MoMo","Url":"/","Icon":null},{"Title":"Ví Nhân Ái","Url":"/vi-nhan-ai","Icon":null}]}},{"Id":1074,"PageId":12,"Type":2,"TypeName":"Banner","Template":1,"DisplayOrder":0,"Title":"Main Banner","Short":null,"ShortTitle":null,"Content":null,"BgColor":"white","Data":{"Items":[{"Guid":"6350c5da-bcd1-45aa-8057-8a9ade51f29b","Name":"Banner 1","Description":null,"DateShow":"2022-06-09 22:20:00","DateOff":null,"Status":1,"Avatar":"https://static.mservice.io/img/momo-upload-api-220610222058-637904964587890784.jpg","AvatarMobile":"https://static.mservice.io/img/momo-upload-api-220610222100-637904964604135347.jpg","Url":null,"IsNewTab":false,"DisplayOrder":1}]}},{"Id":1075,"PageId":12,"Type":20,"TypeName":"AboutH1","Template":3,"TemplateName":"Donation_Trai_Tim","DisplayOrder":2,"ShortTitle":null,"BgColor":null,"Data":{"Title":"Ví Nhân Ái - Thiện nguyện mỗi ngày","Description":"Ví Nhân Ái là tính năng tập hợp tất cả các dự án, tổ chức đang gây quỹ từ thiện trên MoMo. Nơi bạn có thể thực hiện “sống tốt” bằng cách quyên góp Heo Vàng hoặc tiền mặt.\n\u003cbr/\u003e\n\u003cspan class=\"block text-md pt-4\"\u003e\nNhìn lại chặng đường Ví Nhân Ái đã đi qua\n\u003c/span\u003e\n\u003cstyle\u003e#block-1077 [role=\"tablist\"] {\n    justify-content: center;\n} \u003c/style\u003e","Short":null,"Avatar":"https://static.mservice.io/img/momo-upload-api-220610222354-637904966341393543.png","YoutubeCode":null,"VideoUrl":"https://static.mservice.io/jk/momo2020/img/donation/heodat/Block%202.mp4","Items":[{"Title":"834","Short":"dự án đã được gây quỹ thành công"},{"Title":"53+ tỷ","Short":"đồng được quyên góp"},{"Title":"715+ triệu","Short":"heo vàng được quyên góp"},{"Title":"121+ triệu","Short":"lượt quyên góp"}],"Ctas":[{"Text":"Quyên góp","NewTab":false,"Link":"#block-1077","RedirectUC":null,"QrCodeId":null,"QrCodeData":null},{"Text":"Giới thiệu","NewTab":false,"Link":"#block-1127","RedirectUC":null,"QrCodeId":null,"QrCodeData":null}]},"Config":{"TitleColor":"","TitleClass":"","ShortColor":"","ShortClass":"","TitleHtmlElement":null}},{"Id":1077,"PageId":12,"Type":24,"TypeName":"ProjectDonations","Template":1,"DisplayOrder":3,"Title":"Các hoàn cảnh quyên góp","Short":"Chung tay quyên góp giúp đỡ các hoàn cảnh khó khăn trên khắp cả nước.","ShortTitle":null,"Content":null,"BgColor":null,"Data":{"Projects":[{"Items":[{"Title":"Mang 10 thư viện đến trẻ em ở vùng khó khăn phía Bắc gồm Hà Giang và Bắc Ninh","Short":"Cùng chung tay mang 10 thư viện ước mơ đến với 4.000 trẻ em ở vùng khó khăn thuộc tỉnh Hà Giang và Bắc Ninh để các em có được không gian đọc sách tiện nghi, khơi nguồn sáng tạo và nghệ thuật.","CategoryId":null,"CategoryName":"Thư Viện Ước Mơ","UrlRewrite":"mang-10-thu-vien-den-tre-em-o-vung-kho-khan-ha-giang-bac-ninh","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230112143506-638091309060698652.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/mang-10-thu-vien-den-tre-em-o-vung-kho-khan-ha-giang-bac-ninh","TotalViews":0,"TotalMoney":"1.716.663","TotalOrder":0,"TotalTrans":"49","ExpectedValue":208000000,"ExpectedValueFormat":"208.000.000","FinishPercent":0.83,"TimeToEndDate":"49 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230112143522-638091309229486941.png","CategorySlug":"thu-vien-uoc-mo","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":889,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Gây quỹ trao 50 phần quà Tết cho trẻ em và gia đình có hoàn cảnh khó khăn tại Tp.HCM","Short":"Cùng MSD United Way Vietnam chung tay gây quỹ trao tặng 50 phần quà Tết cho trẻ em và gia đình có hoàn cảnh khó khăn thuộc Trang mới cuộc đời – khu vực Tp.HCM","CategoryId":null,"CategoryName":"MSD United Way","UrlRewrite":"gay-quy-trao-50-phan-qua-tet-cho-tre-em-va-gia-dinh-tai-tphcm","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230112141333-638091296130777561.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/gay-quy-trao-50-phan-qua-tet-cho-tre-em-va-gia-dinh-tai-tphcm","TotalViews":0,"TotalMoney":"580.000","TotalOrder":0,"TotalTrans":"55","ExpectedValue":50000000,"ExpectedValueFormat":"50.000.000","FinishPercent":1.16,"TimeToEndDate":"49 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230112141341-638091296211507602.jpg","CategorySlug":"msd-united-way","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":887,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Chung tay giúp những cô gái mở tiệm giặt là người Điếc, giúp người Điếc/Khiếm thính có việc làm ổn định","Short":"Cùng khởi sự cho mô hình tạo việc làm bền vững cho những người Điếc/Khiếm thính trong dự án “Tiệm giặt là của người Điếc” tại khu vực phía Nam.","CategoryId":null,"CategoryName":"Sáng Group","UrlRewrite":"chung-tay-giup-nhung-co-gai-mo-tiem-giat-la-nguoi-diec","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230109110937-638088593778096647.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/chung-tay-giup-nhung-co-gai-mo-tiem-giat-la-nguoi-diec","TotalViews":0,"TotalMoney":"1.998.414","TotalOrder":0,"TotalTrans":"191","ExpectedValue":250000000,"ExpectedValueFormat":"250.000.000","FinishPercent":0.8,"TimeToEndDate":"46 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230110124011-638089512118462338.jpg","CategorySlug":"sang-group","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":885,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Chung tay gây quỹ xây 2 nhà khăn quàng đỏ, tặng 30 xe đạp và 81.000 ly sữa cho trẻ em dân tộc thiểu số","Short":"Chung tay xây dựng nhà khăn quàng đỏ giúp 2 em học sinh nghèo dân tộc thiểu số có nơi sinh sống ổn định, chuyên tâm học tập, thực hiện ước mơ của mình","CategoryId":null,"CategoryName":"Đoàn Thanh niên cơ quan Trung ương Đoàn","UrlRewrite":"chung-tay-gay-quy-xay-2-nha-khan-quang-do-tang-30-xe-dap","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230106170837-638086217177427522.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/chung-tay-gay-quy-xay-2-nha-khan-quang-do-tang-30-xe-dap","TotalViews":0,"TotalMoney":"2.698.621","TotalOrder":0,"TotalTrans":"331","ExpectedValue":185000000,"ExpectedValueFormat":"185.000.000","FinishPercent":1.46,"TimeToEndDate":"38 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230106170846-638086217269213753.jpg","CategorySlug":"Tanhnientrunguong","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":882,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Chung tay hỗ trợ chương trình Họp mặt cho sinh viên có hoàn cảnh khó khăn đón Tết xa nhà","Short":"Chương trình dự kiến hỗ trợ cho hơn 2.000 học sinh, sinh viên có hoàn cảnh khó khăn ở lại TP.Hồ Chí Minh đón Tết. Với mỗi học sinh, sinh viên sẽ được chương trình hỗ trợ một phần quà Tết trị giá 1.000.000 VNĐ/người.","CategoryId":null,"CategoryName":"Trung tâm Hỗ trợ Học sinh, sinh viên TP. Hồ Chí Minh","UrlRewrite":"chung-tay-ho-tro-chuong-trinh-hop-mat-cho-sinh-vien-co-hoan-canh-kho-khan","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230105110745-638085136651976981.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/chung-tay-ho-tro-chuong-trinh-hop-mat-cho-sinh-vien-co-hoan-canh-kho-khan","TotalViews":0,"TotalMoney":"1.718.129","TotalOrder":0,"TotalTrans":"241","ExpectedValue":200000000,"ExpectedValueFormat":"200.000.000","FinishPercent":0.86,"TimeToEndDate":"37 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230105110753-638085136732069081.png","CategorySlug":"trung-tam-ho-tro-hoc-sinh-sinh-vien-tp-ho-chi-minh","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":880,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Đại sứ Nước – Đem nước sạch về cho người dân Xóm Chiềng Cang, Tỉnh Hòa Bình","Short":"Chung tay cùng Đại sứ Nước – để xây dựng công trình nước sinh hoạt đem nước sạch về cho người dân Xóm Chiềng Cang, huyện Đà Bắc, Tỉnh Hòa Bình","CategoryId":null,"CategoryName":"MSD và RIC","UrlRewrite":"dai-su-nuoc-dem-nuoc-sach-ve-cho-nguoi-dan-xom-chieng-cang-hoa-binh","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-221229133836-638079179168237393.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/dai-su-nuoc-dem-nuoc-sach-ve-cho-nguoi-dan-xom-chieng-cang-hoa-binh","TotalViews":0,"TotalMoney":"6.224.030","TotalOrder":0,"TotalTrans":"970","ExpectedValue":200000000,"ExpectedValueFormat":"200.000.000","FinishPercent":3.11,"TimeToEndDate":"35 Ngày","IsEndCampaign":false,"Type":1,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-221229133846-638079179269590365.png","CategorySlug":"msd-va-ric","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":872,"Status":1,"DisplayOrder":null,"IsNewTab":false}],"Count":6,"TotalItems":417,"LastIdx":6,"Title":"Trái Tim MoMo","UrlRewrite":null,"DisplayOrder":1,"Status":1,"SortBy":1,"SortDir":2,"ProjectId":0,"ProjectIds":[14],"CtaText":null,"CtaLink":null,"CtaQrCodeId":null,"CtaNewTab":false},{"Items":[{"Title":"Góp Heo Vàng mang 10 thư viện đến trẻ em ở vùng khó khăn phía Bắc gồm Hà Giang và Bắc Ninh","Short":"Cùng chung tay mang 10 thư viện ước mơ đến với 4.000 trẻ em ở vùng khó khăn thuộc tỉnh Hà Giang và Bắc Ninh để các em có được không gian đọc sách tiện nghi, khơi nguồn sáng tạo và nghệ thuật.","CategoryId":null,"CategoryName":"Thư Viện Ước Mơ","UrlRewrite":"gop-heo-vang-mang-10-thu-vien-den-tre-em-o-vung-kho-khan-ha-giang-bac-ninh","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230112144550-638091315505647016.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/gop-heo-vang-mang-10-thu-vien-den-tre-em-o-vung-kho-khan-ha-giang-bac-ninh","TotalViews":0,"TotalMoney":"5.642","TotalOrder":0,"TotalTrans":"355","ExpectedValue":4160000,"ExpectedValueFormat":"4.160.000","FinishPercent":0.14,"TimeToEndDate":"49 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230112144558-638091315580244728.png","CategorySlug":"thu-vien-uoc-mo","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":890,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Chương trình “Vaccine số – Phòng tránh rủi ro cho trẻ em trên môi trường Internet”","Short":"Hưởng ứng chương trình “Vaccine số – Phòng tránh rủi ro cho trẻ em trên môi trường Internet” cùng MSD United Way Vietnam","CategoryId":null,"CategoryName":"MSD United Way","UrlRewrite":"chuong-trinh-vaccine-so-phong-tranh-rui-ro-cho-tre-em","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230112142315-638091301958616256.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/chuong-trinh-vaccine-so-phong-tranh-rui-ro-cho-tre-em","TotalViews":0,"TotalMoney":"1.810","TotalOrder":0,"TotalTrans":"242","ExpectedValue":2000000,"ExpectedValueFormat":"2.000.000","FinishPercent":0.09,"TimeToEndDate":"49 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230112142329-638091302095038440.jpg","CategorySlug":"msd-united-way","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":888,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Góp Heo Vàng giúp những cô gái mở tiệm giặt là người Điếc, giúp người Điếc/Khiếm thính có việc làm ổn định","Short":"Chung tay cùng khởi sự cho mô hình tạo việc làm bền vững cho những người Điếc/khiếm thính trong dự án “Tiệm giặt là của người Điếc” tại khu vực phía Nam.","CategoryId":null,"CategoryName":"Sáng Group","UrlRewrite":"gop-heo-vang-giup-nhung-co-gai-mo-tiem-giat-la-nguoi-diec","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230109111824-638088599045111851.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/gop-heo-vang-giup-nhung-co-gai-mo-tiem-giat-la-nguoi-diec","TotalViews":0,"TotalMoney":"16.019","TotalOrder":0,"TotalTrans":"1.558","ExpectedValue":2640000,"ExpectedValueFormat":"2.640.000","FinishPercent":0.61,"TimeToEndDate":"46 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230110124019-638089512197777792.jpg","CategorySlug":"sang-group","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":886,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Góp Heo Vàng giúp cho 15.567 trẻ ở Điện Biên có áo ấm mùa đông cùng Anh Chị Nuôi Dự án Nuôi Em","Short":"15.567 em nhỏ vùng cao ở Điện Biên sẽ có thêm chiếc áo ấm trong mùa đông khắc nghiệt. Nó giúp các em kiên trì hơn trên con đường gian nan đến trường.","CategoryId":null,"CategoryName":"Anh Chị Nuôi Dự án Nuôi Em","UrlRewrite":"gop-heo-vang-giup-cho-15567-tre-o-dien-bien-co-ao-am","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230106172324-638086226047935403.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/gop-heo-vang-giup-cho-15567-tre-o-dien-bien-co-ao-am","TotalViews":0,"TotalMoney":"16.794","TotalOrder":0,"TotalTrans":"2.147","ExpectedValue":1893750,"ExpectedValueFormat":"1.893.750","FinishPercent":0.89,"TimeToEndDate":"38 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230106172337-638086226172709410.jpg","CategorySlug":"anh-chi-nuoi-du-an-nuoi-em","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":884,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Cùng VEYO góp Heo Vàng xây 2 nhà khăn quàng đỏ, 30 xe đạp và tặng 81.000 ly sữa cho các em nhỏ khó khăn","Short":"Chung tay giúp các em học sinh nghèo có nơi sinh sống ổn định, chuyên tâm học tập, thực hiện ước mơ của mình","CategoryId":null,"CategoryName":"Công ty Sữa đậu nành Việt Nam Vinasoy","UrlRewrite":"cung-veyo-gop-heo-vang-xay-2-nha-khan-quang-do-30-xe-dap","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230106171700-638086222206721390.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/cung-veyo-gop-heo-vang-xay-2-nha-khan-quang-do-30-xe-dap","TotalViews":0,"TotalMoney":"18.181","TotalOrder":0,"TotalTrans":"2.214","ExpectedValue":2736000,"ExpectedValueFormat":"2.736.000","FinishPercent":0.66,"TimeToEndDate":"38 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230106171712-638086222320118231.png","CategorySlug":"Vinasoy","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":883,"Status":1,"DisplayOrder":null,"IsNewTab":false},{"Title":"Góp Heo Vàng hỗ trợ chương trình Họp mặt cho sinh viên có hoàn cảnh khó khăn đón Tết xa nhà","Short":"Chương trình dự kiến hỗ trợ cho hơn 2.000 học sinh, sinh viên có hoàn cảnh khó khăn ở lại TP.Hồ Chí Minh đón Tết. Với mỗi học sinh, sinh viên sẽ được chương trình hỗ trợ một phần quà Tết trị giá 1.000.000 VNĐ/người.","CategoryId":null,"CategoryName":"Trung tâm Hỗ trợ Học sinh, sinh viên TP. Hồ Chí Minh","UrlRewrite":"gop-heo-vang-ho-tro-chuong-trinh-hop-mat-cho-sinh-vien-kho-khan-don-tet","Avatar":"https://static.mservice.io/blogscontents/momo-upload-api-230105111841-638085143215694640.jpg","QRCode":null,"QRLink":null,"Link":"/cong-dong/gop-heo-vang-ho-tro-chuong-trinh-hop-mat-cho-sinh-vien-kho-khan-don-tet","TotalViews":0,"TotalMoney":"54.877","TotalOrder":0,"TotalTrans":"5.806","ExpectedValue":4000000,"ExpectedValueFormat":"4.000.000","FinishPercent":1.37,"TimeToEndDate":"37 Ngày","IsEndCampaign":false,"Type":2,"GuideId":null,"IsShowWeb":false,"IsContDonate":false,"IsMap":false,"PartnerImage":"https://static.mservice.io/blogscontents/momo-upload-api-230105111907-638085143472863707.png","CategorySlug":"trung-tam-ho-tro-hoc-sinh-sinh-vien-tp-ho-chi-minh","CategoryIsShowDetail":false,"RootCategoryName":null,"Guid":null,"Id":881,"Status":1,"DisplayOrder":null,"IsNewTab":false}],"Count":6,"TotalItems":447,"LastIdx":6,"Title":"Heo Đất MoMo","UrlRewrite":null,"DisplayOrder":2,"Status":1,"SortBy":1,"SortDir":2,"ProjectId":0,"ProjectIds":[15],"CtaText":null,"CtaLink":null,"CtaQrCodeId":null,"CtaNewTab":false}],"ShowGroupAll":false,"ItemsCountPerGroup":6,"Title":null,"Description":null},"Config":null,"Cta":null},{"Id":1127,"PageId":12,"Type":21,"TypeName":"Usp","Template":1,"TemplateName":"USP_1","DisplayOrder":4,"ShortTitle":null,"BgColor":null,"Data":{"Title":"Ví Nhân Ái - Thiện nguyện mỗi ngày","Description":null,"Avatar":"https://static.mservice.io/img/momo-upload-api-220613103711-637907134317123216.png","Items":[{"Title":"Quyên góp nhanh chóng, dễ dàng","Short":"Chỉ với vài chạm, bạn đã góp phần giúp đỡ 1 hoàn cảnh khó khăn có cuộc sống tốt đẹp hơn.","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-211217034336.svg"},{"Title":"1000đ cũng là đáng quý","Short":"Với mức ủng hộ tối thiểu 1.000 đồng, bạn đã cùng hàng triệu nhà hảo tâm khác của “Trái tim MoMo” giúp đỡ những mảnh đời khó khăn.","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-211217034312.svg"},{"Title":"Minh bạch, công khai mọi khoản đóng góp","Short":"Mọi thông tin về hoạt động đóng góp, tài trợ đều được công khai và cập nhật liên tục.","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-211217034305.svg"},{"Title":"Đối tác của các cơ quan, tổ chức hảo tâm uy tín","Short":"“Trái tim MoMo” đã và đang kết nối được với rất nhiều đơn vị bảo trợ, báo chí, đơn vị hảo tâm uy tín trên cả nước.","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Avatar":"https://static.mservice.io/fileuploads/svg/momo-file-211217034206.svg"}],"Ctas":[{"Text":"QUYÊN GÓP NGAY","NewTab":false,"Link":"https://page.momoapp.vn/ZHytsfI1Cod","RedirectUC":null,"QrCodeId":22,"QrCodeData":{"Id":22,"IsNewTab":false,"QrLink":"https://page.momoapp.vn/K6AWDQxFTjj","ShortTitle":"Quyên góp tiền ngay","Title":"Quét mã để tải ứng dụng và Quyên góp ngay","BtnText":null,"QrImage":"https://static.mservice.io/img/momo-upload-api-220506171544-637874541447860477.png"}}]},"Config":{"TitleColor":"","TitleClass":"","ShortColor":"","ShortClass":"","TitleHtmlElement":null}},{"Id":1082,"PageId":12,"Type":11,"TypeName":"ItemsContent","Template":1,"TemplateName":"Merchant_3Columns_3Rows_Scroll","DisplayOrder":4,"ShortTitle":null,"BgColor":null,"Data":{"Title":"Các đối tác đồng hành","Description":"Các tổ chức nhân đạo Phi Lợi Nhuận đồng hành cùng Ví MoMo giúp đỡ các hoàn cảnh khó khăn trên khắp cả nước.","Items":[{"Title":"Sức mạnh 2000","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/suc-manh-2000","Short":"Tiền lẻ mỗi ngày Xây ngay nghìn trường mới","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145044-637801014448263998.jpg"},{"Title":"Quỹ Hy Vọng","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/quy-hy-vong-hope-foundation","Short":"Hỗ trợ các hoàn cảnh khó khăn","Avatar":"https://static.mservice.io/img/momo-upload-api-220210144649-637801012095537821.jpg"},{"Title":"Viện Nghiên cứu Quản lý Phát triển bền vững (MSD)","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/vien-nghien-cuu-quan-ly-phat-trien-ben-vung-msd","Short":"Bảo vệ các đối tượng có hoàn cảnh khó khăn","Avatar":"https://static.mservice.io/img/momo-upload-api-220210144730-637801012500730410.jpg"},{"Title":"Quỹ từ thiện Hoa Chia Sẻ","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/hoa-chia-se","Short":"Hỗ trợ các hoàn cảnh khó khăn","Avatar":"https://static.mservice.io/img/momo-upload-api-220222143709-637811374290560734.jpg"},{"Title":"VinaCapital Foundation","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/the-vinacapital-foundation-vcf","Short":"Thay đổi cuộc sống cho phụ nữ và trẻ em Việt Nam","Avatar":"https://static.mservice.io/img/momo-upload-api-220224163117-637813170779125320.png"},{"Title":"Quỹ Vì Tầm Vóc Việt","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/quy-vi-tam-voc-viet","Short":"Vì tầm vóc Việt","Avatar":"https://static.mservice.io/img/momo-upload-api-220210144849-637801013290473832.jpg"},{"Title":"Saigon Children's Charity","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/saigon-children-charity","Short":"Hỗ trợ trẻ em","Avatar":"https://static.mservice.io/img/momo-upload-api-220210144919-637801013591050551.jpg"},{"Title":"SCDI – Mỗi ngày Một quả trứng","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/scdi-moi-ngay-mot-qua-trung","Short":"Trung tâm Hỗ trợ Sáng kiến Phát triển Cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220210144944-637801013847718816.jpg"},{"Title":"Thien Nhan \u0026 Friends","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/thien-nhan-friends","Short":"Phẫu thuật BPSD cho trẻ em","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145014-637801014149994575.jpg"},{"Title":"Tương Lai Centre","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/trung-tam-tuong-lai","Short":"Phòng chống xâm hại tình dục trẻ em","Avatar":"https://static.mservice.io/img/momo-upload-api-220628110539-637920111390938583.jpg"},{"Title":"Quỹ Trăng Khuyết","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/quy-trang-khuyet","Short":"Hỗ trợ người già \u0026 trẻ em","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145113-637801014732015266.jpg"},{"Title":"Operation Smile","Content":null,"IsNewTab":false,"IsOpenUrl":true,"Status":1,"Url":"/song-tot/operation-smile-vietnam-to-chuc-phau-thuat-nu-cuoi","Short":"Phẫu thuật nụ cười","Avatar":"https://static.mservice.io/img/momo-upload-api-220224163215-637813171353558027.png"},{"Title":"iSEE","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Vì một xã hội bình đẳng","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145134-637801014947564725.jpg"},{"Title":"Dự án Nuôi Em - Ánh Sáng Núi Rừng","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Bữa cơm trẻ em vùng cao","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145152-637801015125594638.png"},{"Title":"Quỹ Phan Anh","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Phát triển văn hóa giáo dục","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145343-637801016233493870.jpg"},{"Title":"Trung tâm Tình nguyện Quốc gia","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Thúc đẩy đam mê tình nguyện","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145425-637801016658545608.jpg"},{"Title":"Báo Lao Động","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Cơ quan của Tổng Liên đoàn Lao động Việt Nam","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145506-637801017065867797.jpg"},{"Title":"Giáo Hội Phật Giáo Việt Nam","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":"","Short":"Tổ chức Phật Giáo toàn quốc","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145448-637801016887137108.jpg"},{"Title":"Báo Điện Tử Dân Trí","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Đóng góp tích cực vào sự phát triển Kinh tế - Xã Hội của đất nước","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145525-637801017259801387.jpg"},{"Title":"Báo Người Lao Động","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Đồng hành với người lao động","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145547-637801017474692150.jpg"},{"Title":"Báo Tuổi Trẻ","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":"","Short":"Cơ quan ngôn luận của Đoàn Thanh niên Cộng sản Thành phố Hồ Chí Minh","Avatar":"https://static.mservice.io/img/momo-upload-api-220210145625-637801017851578516.jpg"},{"Title":"Mặt trận Tổ quốc Việt Nam","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Uỷ ban Trung ương Mặt trận Tổ quốc Việt Nam","Avatar":"https://static.mservice.io/placebrand/s/momo-upload-api-210111092912-637459541527089225.jpg"},{"Title":"Viện Nghiên Cứu Truyền Thông Phát Triển (RED)","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":" Thúc đẩy hoạt động truyền thông và tối ưu hóa các chương trình phát triển","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121342-637908056229901387.png"},{"Title":"Tony Foundation","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Giúp đỡ người già và trẻ em có hoàn cảnh khó khăn tại Việt Nam","Avatar":"https://static.mservice.io/img/momo-upload-api-220614101505-637907985055131610.jpg"},{"Title":"Sách và Hành Động","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Xây dựng thói quen đọc sách và tinh thần hành động trong cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614101239-637907983596610105.jpg"},{"Title":"Ruy Băng Tím","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Phòng chống ung thư tại Việt Nam","Avatar":"https://static.mservice.io/img/momo-upload-api-220614101120-637907982804258884.jpg"},{"Title":"Quỹ Nam Phương","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Xây cầu cho trẻ em","Avatar":"https://static.mservice.io/img/momo-upload-api-220614100739-637907980593205560.png"},{"Title":"Passerelles Numeriques Vietnam","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Cung cấp học bổng toàn phần chất lượng cao về công nghệ","Avatar":"https://static.mservice.io/img/momo-upload-api-220614100618-637907979789273222.png"},{"Title":"Trung tâm Bảo tồn Đa dạng Sinh học Nước Việt Xanh (GreenViet)","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Bảo tồn hệ sinh thái và các loài động thực vật nguy cấp tại Việt Nam","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121352-637908056326559550.png"},{"Title":"Trung tâm CSGDMN OneSky","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Tạo sự phát triển cho trẻ và mang lại sự an tâm cho công nhân lao động","Avatar":"https://static.mservice.io/img/momo-upload-api-220614100211-637907977314949751.jpg"},{"Title":"Trung tâm Con người và Thiên nhiên (PanNature) ","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Bảo vệ môi trường, bảo tồn sự đa dạng và phong phú của thiên nhiên, nâng cao chất lượng cuộc sống của cộng đồng địa phương ","Avatar":"https://static.mservice.io/img/momo-upload-api-220614100037-637907976371845231.png"},{"Title":"Mạng Lưới Ung Thư Vú Việt Nam","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Tăng cường phát hiện sớm ung thư vú và nâng cao chất lượng sống cho phụ nữ trong cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121358-637908056384187337.png"},{"Title":"Joy Foundation","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Giải quyết vấn đề xã hội, môi trường vì lợi ích cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121404-637908056441656682.png"},{"Title":"Hội bảo trợ người tàn tật \u0026 trẻ mồ côi huyện Quỳnh Nhai","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Giúp đỡ NTT \u0026 trẻ mồ côi","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121409-637908056492787657.png"},{"Title":"Children of Vietnam","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Giúp đỡ trẻ em nghèo và vô gia cư của khu vực Đà Nẵng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121415-637908056556412717.png"},{"Title":"Trung Tâm Hành Động Và Liên Kết Vì Mội Trường Và Phát Triển","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Nâng cao nhận thức, xây dựng năng lực cộng đồng ","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121420-637908056609309567.png"},{"Title":"Quỹ Bảo trợ thú cưng","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":" Tiếp nhận và chăm sóc, đảm bảo các phúc lợi động vật thú cưng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121426-637908056661957698.png"},{"Title":"Cơ sở bảo trợ xã hội Thảo Đàn","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Chăm sóc, hỗ trợ và bảo vệ trẻ em đường phố","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121433-637908056736843710.png"},{"Title":"Quỹ giáo dục Hands-On","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Hỗ trợ tài chính, kiến thức và kỹ năng cho HS","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121440-637908056801930441.png"},{"Title":"Trung tâm Hỗ trợ học sinh, sinh viên TP. Hồ Chí Minh","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Hoạt động chăm lo, hỗ trợ cho HSSV","Avatar":"https://static.mservice.io/img/momo-upload-api-220614094601-637907967612229993.jfif"},{"Title":"Think Playgrounds","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Sân chơi công cộng và vườn cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121453-637908056939397184.png"},{"Title":"Thiện Chí","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Phát triển cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121458-637908056989210036.png"},{"Title":"Vulcan Augmetics","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Lắp cánh tay robot cho NKT","Avatar":"https://static.mservice.io/img/momo-upload-api-220614085505-637907937056548513.jfif"},{"Title":"Maison Chance","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":" Nhà May Mắn cho NKT, trẻ em mồ côi","Avatar":"https://static.mservice.io/img/momo-upload-api-220614093436-637907960768724372.jfif"},{"Title":"Trung tâm Sống và Học tập vì Môi trường và Cộng đồng (Live \u0026 Learn)","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Vì Môi trường \u0026 Cộng đồng","Avatar":"https://static.mservice.io/img/momo-upload-api-220614093751-637907962717032478.png"},{"Title":"ECUE","Content":null,"IsNewTab":false,"IsOpenUrl":false,"Status":1,"Url":null,"Short":"Thúc đẩy bình đẳng giới, đa dạng và hòa nhập, môi trường bền vững","Avatar":"https://static.mservice.io/img/momo-upload-api-220614121505-637908057057157960.png"}],"Cta":{"Text":"Xem tất cả","NewTab":false,"Link":"/vi-nhan-ai/doi-tac-dong-hanh","RedirectUC":null,"QrCodeId":null,"QrCodeData":null}}},{"Id":1125,"PageId":12,"Type":22,"TypeName":"HtmlTitle","Template":1,"DisplayOrder":5,"Title":"Khi thiện nguyện là nguồn hạnh phúc","Short":null,"ShortTitle":null,"Content":"\u003cp\u003e\n\tĐời sống xã hội ngày càng được nâng cao cũng là lúc người ta phát sinh nhu cầu muốn được chia sẻ, được đóng góp cho xã hội, giúp đỡ những cộng đồng yếu thế, những hoàn cảnh khó khăn.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tLàm việc thiện không chỉ là sự cho đi, sự sẻ chia giá trị mà còn giúp mỗi người nhận về niềm vui, cảm xúc tích cực, ý nghĩa. Với tôn chỉ “người dùng hạnh phúc”, MoMo quyết định khai thác “nguồn hạnh phúc” đầy ý nghĩa là hoạt động thiện nguyện.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tCó sẵn ưu thế nền tảng công nghệ cao, hướng tới sự thuận tiện và minh bạch, Trái tim MoMo liên kết với những quỹ thiện nguyện, những dự án cộng đồng, trở thành cầu nối cho các nhà hảo tâm.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tViệc quyên góp tiền từ thiện trở nên đơn giản, chỉ gói gọn trong vài thao tác nhỏ trên điện thoại thông minh. Các thông tin về đóng góp, tài trợ được công khai và cập nhật liên tục, người dùng có thể dễ dàng tra cứu.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tTừ đó, những dự án đầy ý nghĩa như Sức mạnh 2000; Quỹ Hy Vọng; Hoa Chia Sẻ… nhận được thêm nhiều nguồn lực đóng góp.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tMột trong những dự án thiện nguyện nổi bật được liên kết với Ví MoMo phải kể đến Sức mạnh 2000, dự án quyên góp tiền xây trường học vùng cao với ý tưởng “xin” nhà hảo tâm 2.000 đồng mỗi ngày.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tAnh Hoàng Hoa Trung, đại diện dự án từng nhận xét, MoMo là nền tảng phù hợp nhất bởi “chẳng có hệ thống nào khác giúp tự trừ 2.000 đồng mỗi ngày”.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tTầm nhìn của dự án Sức mạnh 2000 cũng tương đồng với thông điệp về thiện nguyện của MoMo là “một ngàn đồng cũng đáng quý”. Với mức quyên góp tối thiểu 1.000 đồng, người dùng MoMo có thể tận dụng tiền lẻ sau mỗi lần giao dịch để làm từ thiện, chỉ là số tiền nhỏ nhưng đem lại những giá trị lớn lao, cao cả.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tĐối với tính năng Heo đất MoMo, người dùng nhận được Heo vàng sau mỗi lần giao dịch, chuyển tiền hoặc những hoạt động như đi bộ, dậy sớm, giải câu đố, tương tác với bạn bè… Heo Vàng được quy đổi thành tiền và quyên góp vào các dự án thiện nguyện.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tNgoại trừ chi phí chuyển khoản ngân hàng, 100% số tiền quyên góp được từ Heo đất MoMo được chuyển tới các tổ chức bảo trợ, tổ chức từ thiện. Trong trường hợp gây quỹ không thành công (không đủ số Heo vàng), MoMo vẫn chuyển số tiền tương ứng với số Heo vàng đã nhận được hoặc có thể gia hạn thời gian gây quỹ.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tRa mắt từ tháng 9/2019, những chú Heo Vàng đã đồng hành cùng nhiều nhà tài trợ, quyên góp được hơn 45 tỷ đồng tiền mặt và hơn 520 triệu Heo Vàng (tính đến tháng 6/2022, trung bình 1 Heo Vàng trị giá 140đ), hỗ trợ cho hơn 94 nghìn em nhỏ có hoàn cảnh khó khăn, giúp các em được ăn no, được đến trường.\n\u003c/p\u003e\n\n\u003cp\u003e\n\t“Ngoài số tiền quy đổi, ý nghĩa của Heo đất MoMo còn nằm ở thông điệp: thiện nguyện không phải là điều gì to tát, mà chỉ là công việc hàng ngày, ai ai cũng có thể góp sức, dù chỉ bằng việc đi bộ, dậy sớm, có lối sống lành mạnh. Những điều nhỏ bé đó không chỉ cùng nhau tạo nên sự thay đổi vĩ đại cho cộng đồng, mà còn là nguồn cảm hứng sống tích cực cho mỗi người dùng Ví MoMo”, ông Diệp chia sẻ.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tTheo : \u003cspan style=\"color:#0066cc;\"\u003ehttps://theleader.vn/\u003c/span\u003e\n\u003c/p\u003e\n","BtnMoreEnabled":true},{"Id":1079,"PageId":12,"Type":16,"TypeName":"ProjectArticles","Template":1,"DisplayOrder":6,"Title":"Tin tức cộng đồng","Short":"Cập nhật thông tin các hoạt động quyên góp mới nhất","ShortTitle":null,"UrlRewrite":null,"Content":null,"BgColor":null,"Data":{"Projects":[{"Items":[{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-230110092408-638089394483491999.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-230110092413-638089394531130508.jpg","Title":"Tri ân nhà hảo tâm tháng 12 - Hạng mục quyên góp tiền mặt","Code":null,"Short":"Tháng 12 chứng kiến thành tựu rực rỡ của cộng đồng làm việc tốt Heo Đất khi quyên góp thành công 1,3 tỷ đồng.","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2023-01-10 09:21:10","DateShowFormat":"10/01/2023","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/tin-tuc-su-kien/tri-an-nha-hao-tam-thang-12-hang-muc-quyen-gop-3852","IsMap":false,"TotalViews":601,"TotalViewsFormat":"601","TimeReadAvg":0,"Guid":null,"Id":3852,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-230109113406-638088608467765435.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-230109113413-638088608535574081.jpg","Title":"Hội Nghị Heo Siêu Nhân tháng 01/2023","Code":null,"Short":"Thì ra, mùa xuân hoa nở là vì… có các chủ trại đồng hành cùng với Heo Đất trên hành trình “làm điều nhỏ bé vĩ đại”. Hãy cùng gia nhập hội bàn tròn đầu năm để thu thập Huy hiệu mới cóng nhé!","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2023-01-09 11:33:58","DateShowFormat":"09/01/2023","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/tin-tuc-su-kien/hoi-nghi-heo-sieu-nhan-thang-01-2023-3847","IsMap":false,"TotalViews":48648,"TotalViewsFormat":"48.6K","TimeReadAvg":0,"Guid":null,"Id":3847,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-230109104129-638088576899674151.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-230109104133-638088576937056282.jpg","Title":"Tặng trường mới khang trang cho em nhỏ mầm non Khe Lóng","Code":null,"Short":"Xót xa trước những khó khăn của các em nhỏ và thầy cô điểm trường Khe Lóng 3, Heo Đất MoMo hợp tác cùng Dự án Sức mạnh 2000 và Nhà tài trợ chị Trâm Anh lên kế hoạch xây 02 phòng học có nhà vệ sinh kín, 01 nhà bếp cho trẻ nhỏ và 01 phòng công vụ cho giáo viên ở lại chăm sóc các bé.","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2023-01-09 10:41:51","DateShowFormat":"09/01/2023","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/cong-dong/tang-truong-moi-khang-trang-cho-em-nho-mam-non-3845","IsMap":false,"TotalViews":20,"TotalViewsFormat":"20","TimeReadAvg":0,"Guid":null,"Id":3845,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-221230085140-638079871009428295.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-221230085152-638079871125379769.jpg","Title":"Gala Heo Đất Tri Ân 2022","Code":null,"Short":"🥳 Cùng nhìn lại hành trình đầy cảm xúc, làm “điều nhỏ bé vĩ đại” suốt 365 ngày vừa qua cùng Heo Đất MoMo, tổng kết trao thưởng cho những cá nhân có thành tích xuất sắc nhé!","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2022-12-30 08:50:52","DateShowFormat":"30/12/2022","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/tin-tuc-su-kien/gala-heo-dat-tri-an-2022-3823","IsMap":false,"TotalViews":129291,"TotalViewsFormat":"129.3K","TimeReadAvg":0,"Guid":null,"Id":3823,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-221214145316-638066263969326922.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-221214145320-638066264008136074.jpg","Title":"Cải thiện chất lượng học tập của trẻ em Bản Yên, tỉnh Điện Biên","Code":null,"Short":"Thấu hiểu tấm lòng của thầy cô các em nhỏ ở đây luôn chăm ngoan, hiếu học, cộng đồng chủ trại Heo Đất MoMo đã tốc lực quyên góp thành công 4 triệu Heo Vàng. Số Heo Vàng đã được nhà tài trợ quy đổi tương đương 280.000.000 VND và dùng để xây phòng học mới cho điểm trường Bản Yên. Từ một ngôi trường làm từ mái tôn không thể che mưa chắn gió, điểm trường Mầm non Bản Yên giờ đây đã khoác lên một diện mạo mới.","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2022-12-14 14:53:07","DateShowFormat":"14/12/2022","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/cong-dong/cai-thien-chat-luong-hoc-tap-cua-tre-em-ban-yen-3739","IsMap":false,"TotalViews":166,"TotalViewsFormat":"166","TimeReadAvg":0,"Guid":null,"Id":3739,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-221209111540-638061813406912736.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-221209111545-638061813454148149.jpg","Title":"Lớp học mới đón các em nhỏ tại điểm trường Trung Dù (Điện Biên)","Code":null,"Short":"Nhờ cộng đồng chủ trại Heo Đất MoMo đã chăm chỉ cho Heo ăn, thực hiện sống tốt tích cực quyên góp và thành quả đã quyên góp thành công 2.200.000 Heo Vàng cho điểm trường. Ngay sau đó nhà tài trợ là Coolmate đã quy đổi tất cả Heo Vàng thành 220.000.000VND gửi tới Dự án Sức mạnh 2000 trực thuộc Trung tâm Tình nguyện Quốc gia, phối hợp cùng đơn vị chịu trách nhiệm chính tại địa phương thực hiện xây dựng phòng học mới với quy mô 42m2.","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2022-12-09 11:15:38","DateShowFormat":"09/12/2022","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/cong-dong/lop-hoc-moi-don-cac-em-nho-tai-diem-truong-trung-3710","IsMap":false,"TotalViews":201,"TotalViewsFormat":"201","TimeReadAvg":0,"Guid":null,"Id":3710,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-221209104317-638061793978103032.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-221209104323-638061794031398483.jpg","Title":"Đoán trend săn tiền triệu","Code":null,"Short":"Cho Heo order một ly trà sữa hạnh nhân cơ hội này chơi đoán trend săn 1,2 triệu, chỉ duy nhất ngày 12/12!","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2022-12-09 10:42:48","DateShowFormat":"09/12/2022","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/tin-tuc-su-kien/doan-trend-san-tien-trieu-3709","IsMap":false,"TotalViews":5387,"TotalViewsFormat":"5.4K","TimeReadAvg":0,"Guid":null,"Id":3709,"Status":0,"DisplayOrder":null,"IsNewTab":false},{"Avatar":"https://static.mservice.io/blogscontents/s770x370/momo-upload-api-221207151554-638060229548693340.jpg","AvatarMobile":"https://static.mservice.io/blogscontents/momo-upload-api-221207151558-638060229589338937.jpg","Title":"Tri ân nhà hảo tâm tháng 11 - Hạng mục quyên góp tiền mặt","Code":null,"Short":"Lại một cột mốc đáng nhớ nữa được chúng ta xác lập trong tháng 11 vừa qua, đó là đã quyên góp thành công gần 1,26 tỷ cho các hoàn cảnh khó khăn.","Content":null,"DateStart":null,"DateEnd":null,"DateShow":"2022-12-07 15:15:12","DateShowFormat":"07/12/2022","DateOff":null,"DateFormat":"","IsExpired":false,"IsActive":true,"Url":"/tin-tuc/tin-tuc-su-kien/tri-an-nha-hao-tam-thang-11-hang-muc-quyen-gop-3698","IsMap":false,"TotalViews":2182,"TotalViewsFormat":"2.2K","TimeReadAvg":0,"Guid":null,"Id":3698,"Status":0,"DisplayOrder":null,"IsNewTab":false}],"Count":8,"TotalItems":80,"LastIdx":8,"Title":"ALL","UrlRewrite":null,"DisplayOrder":1,"Status":1,"SortBy":1,"SortDir":2,"ProjectId":0,"ProjectIds":[15],"CtaText":"Xem tất cả","CtaLink":"/vi-nhan-ai/tin-tuc-cong-dong","CtaQrCodeId":null,"CtaNewTab":false}],"ShowGroupAll":false,"ItemsCountPerGroup":8,"Title":"Tin tức cộng đồng","Description":"Cập nhật thông tin các hoạt động quyên góp mới nhất"},"Config":null,"Cta":null},{"Id":1081,"PageId":12,"Type":6,"TypeName":"QuestionGroup","Template":1,"TemplateName":"Default","DisplayOrder":8,"Title":"Câu hỏi thường gặp","Short":"","ShortTitle":null,"Content":null,"BgColor":null,"Data":{"Items":[{"ListQuestions":[{"Title":"Heo V\u0026#224;ng c\u0026#243; thể đổi th\u0026#224;nh tiền kh\u0026#244;ng?","ShortContent":"Heo V\u0026#224;ng c\u0026#243; thể đổi th\u0026#224;nh tiền nhưng chỉ sau khi được quy\u0026#234;n g\u0026#243;p cho c\u0026#225;c ho\u0026#224;n cảnh kh\u0026#243; khăn. Bạn kh\u0026#244;ng thể kiếm tiền từ việc tạo ra Heo V\u0026#224;ng.","Content":"Heo V\u0026#224;ng c\u0026#243; thể đổi th\u0026#224;nh tiền nhưng chỉ sau khi được quy\u0026#234;n g\u0026#243;p cho c\u0026#225;c ho\u0026#224;n cảnh kh\u0026#243; khăn. Bạn kh\u0026#244;ng thể kiếm tiền từ việc tạo ra Heo V\u0026#224;ng.","MobileContent":null,"UrlRewrite":"heo-vang-co-the-doi-thanh-tien-khong","GenerateSeo":true,"Guid":null,"Id":1174,"Description":null,"Status":0,"DisplayOrder":null},{"Title":"Gi\u0026#225; trị một Heo V\u0026#224;ng l\u0026#224; bao nhi\u0026#234;u tiền?","ShortContent":"G\u0026#237;a trị của một đồng Heo V\u0026#224;ng thay đổi t\u0026#249;y thuộc v\u0026#224;o dự \u0026#225;n, nh\u0026#224; t\u0026#224;i trợ, v\u0026#224; cả số lượng Heo V\u0026#224;ng được tạo ra mỗi ng\u0026#224;y. T\u0026#237;nh đến th\u0026#225;ng 6 năm 2022, gi\u0026#225; trị một Heo V\u0026#224;ng l\u0026#224; khoảng 140 VND.","Content":"G\u0026#237;a trị của một đồng Heo V\u0026#224;ng thay đổi t\u0026#249;y thuộc v\u0026#224;o dự \u0026#225;n, nh\u0026#224; t\u0026#224;i trợ, v\u0026#224; cả số lượng Heo V\u0026#224;ng được tạo ra mỗi ng\u0026#224;y. T\u0026#237;nh đến th\u0026#225;ng 6 năm 2022, gi\u0026#225; trị một Heo V\u0026#224;ng l\u0026#224; khoảng 140 VND.","MobileContent":null,"UrlRewrite":"gia-tri-mot-heo-vang-la-bao-nhieu-tien","GenerateSeo":true,"Guid":null,"Id":1175,"Description":null,"Status":0,"DisplayOrder":null},{"Title":"Tại sao Heo V\u0026#224;ng c\u0026#243; thể đổi th\u0026#224;nh tiền?","ShortContent":"Mỗi dự \u0026#225;n khi được đăng tải tr\u0026#234;n Heo Đất MoMo đều c\u0026#243; một hoặc một v\u0026#224;i nh\u0026#224; t\u0026#224;i trợ đồng \u0026#253; chuyển số Heo V\u0026#224;ng m\u0026#224; bạn quy\u0026#234;n g\u0026#243;p th\u0026#224;nh tiền.","Content":"Mỗi dự \u0026#225;n khi được đăng tải tr\u0026#234;n Heo Đất MoMo đều c\u0026#243; một hoặc một v\u0026#224;i nh\u0026#224; t\u0026#224;i trợ đồng \u0026#253; chuyển số Heo V\u0026#224;ng m\u0026#224; bạn quy\u0026#234;n g\u0026#243;p th\u0026#224;nh tiền.","MobileContent":null,"UrlRewrite":"tai-sao-heo-vang-co-the-doi-thanh-tien","GenerateSeo":false,"Guid":null,"Id":1176,"Description":null,"Status":0,"DisplayOrder":null},{"Title":"Heo l\u0026#234;n cấp th\u0026#236; c\u0026#243; lợi g\u0026#236; kh\u0026#244;ng?","ShortContent":"Khi Heo l\u0026#234;n cấp, thời gian ăn của Heo sẽ ngắn lại, c\u0026#225;nh sẽ trở n\u0026#234;n đẹp hơn v\u0026#224; t\u0026#250;i thức ăn sẽ chứa được nhiều thức ăn hơn.","Content":"Khi Heo l\u0026#234;n cấp, thời gian ăn của Heo sẽ ngắn lại, c\u0026#225;nh sẽ trở n\u0026#234;n đẹp hơn v\u0026#224; t\u0026#250;i thức ăn sẽ chứa được nhiều thức ăn hơn.","MobileContent":null,"UrlRewrite":"heo-len-cap-thi-co-loi-gi-khong","GenerateSeo":true,"Guid":null,"Id":1177,"Description":null,"Status":0,"DisplayOrder":null},{"Title":"Nếu ho\u0026#224;n cảnh g\u0026#226;y quỹ kh\u0026#244;ng th\u0026#224;nh c\u0026#244;ng th\u0026#236; sao?","ShortContent":"MoMo vẫn sẽ chuyển số tiền tương ứng với số Heo V\u0026#224;ng đ\u0026#227; quy\u0026#234;n g\u0026#243;p. Trong một số trường hợp, ch\u0026#250;ng t\u0026#244;i sẽ k\u0026#233;o d\u0026#224;i th\u0026#234;m thời gian g\u0026#226;y quỹ","Content":"\u0026lt;style type=\u0026quot;text/css\u0026quot;\u0026gt;\u0026lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--\u0026gt;\u0026lt;/style\u0026gt;MoMo vẫn sẽ chuyển số tiền tương ứng với số Heo V\u0026#224;ng đ\u0026#227; quy\u0026#234;n g\u0026#243;p. Trong một số trường hợp, ch\u0026#250;ng t\u0026#244;i sẽ k\u0026#233;o d\u0026#224;i th\u0026#234;m thời gian g\u0026#226;y quỹ","MobileContent":null,"UrlRewrite":"neu-hoan-canh-gay-quy-khong-thanh-cong-thi-sao","GenerateSeo":true,"Guid":null,"Id":1157,"Description":null,"Status":0,"DisplayOrder":null},{"Title":"L\u0026#224;m thế n\u0026#224;o để li\u0026#234;n hệ v\u0026#224; gửi ho\u0026#224;n cảnh tới MoMo?","ShortContent":"Tổ chức đủ điều kiện vui l\u0026#242;ng gửi email th\u0026#244;ng tin của tổ chức tới địa chỉ donation@mservice.com.vn để được nhận hướng dẫn.","Content":"Tổ chức đủ điều kiện vui l\u0026#242;ng gửi email th\u0026#244;ng tin của tổ chức tới địa chỉ \u0026lt;strong\u0026gt;\u0026lt;a href=\u0026quot;mailto:donation@mservice.com.vn\u0026quot;\u0026gt;donation@mservice.com.vn\u0026lt;/a\u0026gt;\u0026lt;/strong\u0026gt; để được nhận hướng dẫn.","MobileContent":null,"UrlRewrite":"lam-the-nao-de-lien-he-va-gui-hoan-canh-toi-momo","GenerateSeo":false,"Guid":null,"Id":1158,"Description":null,"Status":0,"DisplayOrder":null}],"Guid":null,"Id":214,"Title":"Hỏi đáp Heo Đất MoMo","Description":null,"Status":0,"DisplayOrder":null}],"BtnMoreContent":null},"Config":null,"Cta":null},{"Id":1151,"PageId":12,"Type":1,"TypeName":"Html","DisplayOrder":9,"ShortTitle":null,"Content":null}],"Error":null}}},"page":"/vi-nhan-ai","query":{},"buildId":"UavoaYtWp0bmK1wODCgc2","isFallback":false,"dynamicIds":[65746,30491,44676,88556,8470,14392,96127,15840,89989,39803,44924,91215,49395,59075,81769,95944,85513],"gsp":true,"appGip":true,"scriptLoader":[]}</script>
+<next-route-announcer>
+    <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+       style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+    </p>
+</next-route-announcer>
+<script src="/assets/momo_files/302-3a0f48941c9cc8f6.js"></script>
+<script src="/assets/momo_files/6888-9a2803482360a5dc.js"></script>
+<script src="/assets/momo_files/trai-tim-momo-9309a252e6e99f94.js"></script>
+<script src="/assets/momo_files/heo-dat-momo-d44068935189fc20.js"></script>
+<script src="/assets/momo_files/9716-8c99348e9ba7fda1.js"></script>
+<script src="/assets/momo_files/5727-14653555cbce0ba1.js"></script>
+<script src="/assets/momo_files/8777-8d97d9b247b466bb.js"></script>
+<script src="/assets/momo_files/doi-tac-dong-hanh-58d5944103e14488.js"></script>
+<script src="/assets/momo_files/4673-263438ca968c1439.js"></script>
+<script src="/assets/momo_files/9415-e81e3466fc862b69.js"></script>
+<script src="/assets/momo_files/5505-1ad66255fbd889b2.js"></script>
+<script src="/assets/momo_files/2817-5b2c732b9829c555.js"></script>
+<script src="/assets/momo_files/880-3959114a3d03f91f.js"></script>
+<script src="/assets/momo_files/3115-53d3e2fe72fe2ddc.js"></script>
+<script src="/assets/momo_files/blog-cuoc-song-4b84e00e5bb1c194.js"></script>
+<script src="/assets/momo_files/9690-32cc49a7861415e0.js"></script>
+<script src="/assets/momo_files/2533-b029250376b9a277.js"></script>
+<script src="/assets/momo_files/tu-thien-0ac94d8a128e99d0.js"></script>
+<script src="/assets/momo_files/3908-e149157052c5d786.js"></script>
+<script src="/assets/momo_files/2271-287b50ea3957fd07.js"></script>
+<script src="/assets/momo_files/3649-170775215c8f0e2d.js"></script>
+<script src="/assets/momo_files/tin-tuc-cong-dong-4591b9258d7406ef.js"></script>
+</body>
+</html>

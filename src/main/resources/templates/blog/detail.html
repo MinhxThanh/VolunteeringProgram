@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index::dynamic(~{::#main})}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+<div id="main" class="container mt-3">
+    <div class="row border-bottom py-2 ">
+    <span class="d-flex text-muted" style="font-size: 15px">
+        <span><i class="fa-solid fa-house"></i></span>
+        <span class="mx-3"><i class="fa-solid fa-angle-right"></i></span>
+        <span>Ví Nhân Ái </span>
+        <span class="mx-3"><i class="fa-solid fa-angle-right"></i></span>
+        <span>Trái Tim MoMo</span>
+    </span>
+    </div>
+    <!--    title-->
+    <h1 class="font-bold h2 mt-4" th:text="${item.title}"></h1>
+    <h5 class="text-muted h5 my-4" th:text="${item.summary}"></h5>
+    <div class="d-flex justify-content-between">
+        <span class="text-muted"><i class="fa-regular fa-calendar"></i> [[${item.createDate}]]</span>
+        <button class="btn btn-outline-secondary text-muted rounded-5">Chia sẻ <i class="fa-solid fa-share"></i></button>
+    </div>
+    <div class="row my-4">
+        <div class="col-8">
+            <div class="image-list mb-5">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/assets/images/image-1-8d325e42.jpg" class="d-block w-100 rounded-4" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/image-1-8eec3b8c.jpg" class="d-block w-100 rounded-4" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/image-1-21a2f7a0.jpg" class="d-block w-100 rounded-4" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <h4 class="h4 mt-3">
+                Câu chuyện
+            </h4>
+            <div class="my-3">
+                <div th:utext="${item.content}"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card py-5 px-3 rounded-5">
+
+                <div class="card-head">
+                    <h3 class="h4">Thông tin quyên góp</h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <span class="font-bold" style="font-size: 20px">[[${#numbers.formatDecimal(item.donated, 0, 'COMMA', 1, 'POINT')}]]đ</span>
+                        quyên góp / [[${#numbers.formatDecimal(item.goalDonate, 0, 'COMMA', 1, 'POINT')}]]đ</h5>
+                    <div class="progress" style="height: 10px">
+                        <div class="progress-bar bg-danger" role="progressbar" aria-label="Basic example"th:style="'width: '+${percentFinish}+'%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-muted" style="font-size: 13px">
+                            Lượt quyên góp
+                            <span class="font-bold block" style="font-size: 16px" th:text="${item.donateCount}">
+
+                            </span>
+                        </span>
+                        <span class="text-muted" style="font-size: 13px">
+                            Đạt được
+                            <span class="font-bold block" style="font-size: 16px">
+                                [[${percentFinish}]]%
+                            </span>
+                        </span>
+                        <span class="text-muted" style="font-size: 13px">
+                           Thời hạn còn
+                            <span class="font-bold block" style="font-size: 16px">
+                                [[${daysBetween}]] Ngày
+                            </span>
+                        </span>
+                    </div>
+                    <div class="text-center my-4">
+                        <button  class="btn btn-outline-danger px-5 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-brands fa-paypal"></i> Quên Góp Ngay!
+                        </button>
+                    </div>
+                    <hr>
+                    <div class="info">
+                        <span class="text-muted" style="font-size: 14px"></span>
+                        <div class="d-flex flex-row mb-3">
+                            <div class="p-2">
+                                <img th:src="@{${item.account.avatar}}" referrerpolicy="no-referrer" th:alt="${item.account.username}" class="rounded-circle img-fluid" style="height: 60px; width: 60px">
+                            </div>
+                            <div class="py-3">
+                                <a href="#">
+                                    <span class="text-dark" th:text="${item.account.username}"></span>
+                                    <span class="fst-italic text-primary d-block" style="font-size: 13px">Tìm hiểu thêm >></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+<!--    list donor-->
+    <div class="list-donor row mb-5">
+        <div class="col-6 m-auto">
+            <h4 class="h3 mt-4 mb-2">Nhà hảo tâm</h4>
+            <div class="border rounded-4 p-4">
+                <div th:each="donor, iterStat : ${donorList}" class="d-flex border-bottom">
+                    <div class="p-2">
+                        [[${iterStat.index + 1}]]
+                    </div>
+                    <div class="p-2 flex-grow-1">
+                        <span class="font-bold text-muted" th:text="${donor.fullName}"></span>
+                        <span class="block text-muted" th:text="${donor.phone}"></span>
+                    </div>
+                    <div class="p-2">[[${#numbers.formatDecimal(donor.donated, 0, 'COMMA', 1, 'POINT')}]] <i>VND</i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-5 rounded-5">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quuên góp cho <span class="font-bold fst-italic" th:text="${item.title}"></span></h1>
+                </div>
+                <div class="modal-body">
+                    <form th:action="@{/authorize_payment}" method="post">
+                        <input th:name="blogId" th:value="${item.id}" type="hidden" class="form-control" >
+                        <input th:name="blogTitle" th:value="${item.title}" type="hidden" class="form-control">
+                        <div class="mb-4">
+                            <label for="subTotal" class="form-label">Số tiền quyên góp(USD)</label>
+                            <input th:name="subtotal" type="number" class="form-control rounded-5 p-4" id="subTotal" th:value="1">
+                        </div>
+                        <hr>
+                        <div class="mt-3 text-end">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-outline-success px-5 py-2">Check Out</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

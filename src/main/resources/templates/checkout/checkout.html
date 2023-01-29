@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check Out</title>
+    <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+</head>
+<body>
+<div class="container row">
+    <div class="my-5 m-auto border-1 rounded-4 shadow p-5 col-7">
+        <h2 class="">Check Out</h2>
+        <form action="authorize_payment" method="post" th:object="${orderDetail}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name Product</label>
+                <input th:field="*{productName}" type="text" class="form-control" id="name" value="Iphone 13">
+            </div>
+            <div class="mb-3">
+                <label for="subTotal" class="form-label">Sub Total</label>
+                <input th:field="*{subtotal}" type="number" class="form-control" id="subTotal" value="100">
+            </div>
+            <div class="mb-3">
+                <label for="shipping" class="form-label">Shipping</label>
+                <input th:field="*{shipping}" type="number" class="form-control" id="shipping" value="10">
+            </div>
+            <div class="mb-3">
+                <label for="tax" class="form-label">Tax</label>
+                <input th:field="*{tax}" type="number" class="form-control" id="tax" value="10">
+            </div>
+            <div class="mb-3">
+                <label for="totalAmount" class="form-label">Total Amount</label>
+                <input th:field="*{total}" type="number" class="form-control" id="totalAmount" value="120">
+            </div>
+            <div class="mb-3 text-center">
+                <button class="btn btn-outline-success px-5 py-2">Check Out</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
