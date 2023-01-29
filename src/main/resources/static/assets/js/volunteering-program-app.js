@@ -2,6 +2,10 @@ const app = angular.module("volunteering-program-app", [])
 app.controller("volunteering-program-controller", function ($scope, $http) {
 
 })
+$('#carouselExampleFade').ready(function () {
+    $('.carousel-inner').find('.carousel-item').first().addClass('active')
+})
+
 var compareTo = function() {
     return {
         require: "ngModel",
